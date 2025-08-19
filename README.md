@@ -12,9 +12,21 @@ An MCP (Model Context Protocol) server that provides access to Arabic Palestinia
 
 ## Installation
 
+⚠️ **Windows users**: Due to npm permission issues with the MCP SDK dependencies, we recommend using the manual installation method. See [INSTALL.md](./INSTALL.md) for detailed instructions.
+
+### Quick Install (macOS/Linux)
 ```bash
-npm install -g spoken-il-arabic-mcp
+npm install -g git+https://github.com/avi-the-coach/spoken-il-arabic-mcp.git
 ```
+
+### Manual Install (Windows/All platforms)
+```bash
+git clone https://github.com/avi-the-coach/spoken-il-arabic-mcp.git
+cd spoken-il-arabic-mcp
+npm install -g .
+```
+
+📖 **Full installation guide**: [INSTALL.md](./INSTALL.md)
 
 ## Usage with Claude
 
