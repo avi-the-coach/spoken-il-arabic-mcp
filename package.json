@@ -1,0 +1,42 @@
+{
+  "name": "spoken-il-arabic-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MCP Server for Arabic Palestinian conjugation and dictionary lookup",
+  "main": "dist/index.js",
+  "bin": {
+    "spoken-il-arabic-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "arabic",
+    "palestinian",
+    "conjugation",
+    "dictionary",
+    "language-learning"
+  ],
+  "author": "Claude (Anthropic) & Avi Bechar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avi-the-coach/spoken-il-arabic-mcp.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0",
+    "nodemon": "^3.0.0"
+  }
+}
