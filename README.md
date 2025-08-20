@@ -30,6 +30,17 @@ Add to your Claude Desktop configuration:
 }
 ```
 
+## Enhanced Usage Instructions
+
+For an enhanced user experience with formatted Arabic root pages and better data presentation, see the [Claude Desktop Project Instructions](./claude-desktop-project-instructions.md). This file contains detailed guidelines for:
+
+- Creating beautifully formatted HTML pages for Arabic roots
+- Processing MCP data into user-friendly presentations  
+- Step-by-step workflows for Hebrew-to-Arabic root lookups
+- Custom CSS templates and styling guidelines
+
+These instructions help Claude Desktop (or any MCP-supporting client) transform raw conjugation data into polished, educational content.
+
 ## Available Tools
 
 ### 1. search_arabic_roots
