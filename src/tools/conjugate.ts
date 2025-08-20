@@ -1,11 +1,17 @@
 import { RoadToRecoveryApiClient } from '../api/client.js';
 import { ConjugationResponse } from '../types/api.js';
 import { validateRootId, sanitizeInput } from '../utils/validator.js';
+import { formatRootPage } from '../utils/htmlFormatter.js';
 
 export interface ConjugationOptions {
   includeAudio?: boolean;
   includeExamples?: boolean;
   includeNegation?: boolean;
+}
+
+export interface ConjugationWithHtml {
+  conjugation: ConjugationResponse;
+  formatted_html: string;
 }
 
 export class ConjugationTool {
@@ -16,12 +22,12 @@ export class ConjugationTool {
   }
 
   /**
-   * Get full conjugation table for a specific root
+   * Get full conjugation table for a specific root with HTML formatting
    */
   async getRootConjugation(
     rootId: string,
     options: ConjugationOptions = {}
-  ): Promise<ConjugationResponse> {
+  ): Promise<ConjugationWithHtml> {
     // Validate inputs
     validateRootId(rootId);
 
@@ -62,7 +68,13 @@ export class ConjugationTool {
         // This could be enhanced in the future
       }
 
-      return filteredResponse;
+      // Generate HTML formatted page
+      const formattedHtml = formatRootPage(filteredResponse);
+
+      return {
+        conjugation: filteredResponse,
+        formatted_html: formattedHtml
+      };
       
     } catch (error) {
       if (error instanceof Error) {
@@ -92,15 +104,15 @@ export class ConjugationTool {
     });
 
     return {
-      root: response.root.shoresh,
-      rootArabic: response.root.shoreshArabic,
-      meaning: response.root.mashmaut,
-      conjugations: response.root.hataiot.map(conj => ({
+      root: response.conjugation.root.shoresh,
+      rootArabic: response.conjugation.root.shoreshArabic,
+      meaning: response.conjugation.root.mashmaut,
+      conjugations: response.conjugation.root.hataiot.map((conj: any) => ({
         person: conj.who,
         past: conj.avar || '',
         present: conj.hoveh || '',
         future: conj.atid || '',
-      })).filter(conj => conj.past || conj.present || conj.future)
+      })).filter((conj: any) => conj.past || conj.present || conj.future)
     };
   }
 

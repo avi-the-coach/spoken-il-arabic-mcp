@@ -1,0 +1,531 @@
+/**
+ * HTML formatter utility for Arabic root conjugation pages
+ * Based on claude-desktop-project-instructions.md template
+ */
+
+import { ConjugationResponse, Conjugation } from '../types/api.js';
+
+/**
+ * Format conjugation data into a complete HTML page
+ */
+export function formatRootPage(data: ConjugationResponse): string {
+  const { root, audio, sentences } = data;
+  
+  // Extract basic information
+  const hebrewRoot = root.shoresh || 'לא זמין';
+  const arabicRoot = root.shoreshArabic || 'غير متوفر';
+  const meaning = root.mashmaut?.join(', ') || 'לא זמין';
+  const binian = root.binian || 'לא זמין';
+  const gizra = root.gizra || 'לא זמין';
+  const peula = root.peula || 'לא זמין';
+  const idArb = root.idArb || 'لا يتوفر';
+  const heaarot = root.heaarot || '';
+
+  // Generate verb forms section
+  const verbFormsHtml = generateVerbForms(audio, meaning);
+  
+  // Generate conjugation tables
+  const positiveTableHtml = generateConjugationTable(root.hataiot, 'positive');
+  const negativeTableHtml = generateConjugationTable(root.hataiot, 'negative');
+  
+  // Generate examples section if available
+  const examplesHtml = generateExamples(sentences);
+  
+  // Generate quote box if there are notes
+  const quoteBoxHtml = heaarot ? generateQuoteBox(heaarot) : '';
+
+  return `<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שורש ערבי: ${hebrewRoot} (${meaning})</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Assistant', 'Segoe UI', Tahoma, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.4;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px 25px 15px;
+            border-bottom: 2px solid #8b5cf6;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            filter: blur(0.5px);
+        }
+        
+        .root-main {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .root-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-shadow: 0 1px 2px rgba(139, 92, 246, 0.1);
+        }
+        
+        .root-arabic {
+            font-size: 1.8rem;
+            color: #6b7280;
+            font-weight: 400;
+        }
+        
+        .meaning {
+            font-size: 1rem;
+            color: #8b5cf6;
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 20px 25px;
+        }
+        
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            min-width: 60px;
+        }
+        
+        .info-value {
+            color: #1f2937;
+            font-size: 0.95rem;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 25px 0 12px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #8b5cf6;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #8b5cf6;
+            border-radius: 1px;
+        }
+        
+        .verb-forms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .verb-card {
+            text-align: center;
+            padding: 10px 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: white;
+            transition: all 0.2s ease;
+        }
+        
+        .verb-card:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .verb-type {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .verb-form {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        
+        .verb-meaning {
+            font-size: 0.8rem;
+            color: #8b5cf6;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        th {
+            background: #f8fafc;
+            color: #374151;
+            padding: 8px 10px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+        }
+        
+        td {
+            padding: 6px 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: background 0.2s ease;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        tr:hover {
+            background: #f3f4f6;
+        }
+        
+        .person-label {
+            text-align: right !important;
+            font-weight: 600;
+            color: #374151;
+            background: #f1f5f9 !important;
+            font-size: 0.85rem;
+        }
+        
+        .examples {
+            background: #f8fafc;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .example-item {
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border-right: 3px solid #8b5cf6;
+        }
+        
+        .example-arabic {
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .example-hebrew {
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+        }
+        
+        .quote-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        
+        .footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 12px 25px;
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .credit-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .credit-text {
+            color: #6b7280;
+        }
+        
+        .credit-link {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .credit-link:hover {
+            color: #7c3aed;
+            border-bottom-color: #7c3aed;
+        }
+        
+        .separator {
+            color: #d1d5db;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+            
+            .separator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="root-main">
+                <h1 class="root-title">${hebrewRoot}</h1>
+                <div class="root-arabic">${arabicRoot}</div>
+            </div>
+            <div class="meaning">${meaning}</div>
+        </div>
+        
+        <div class="content">
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="info-label">בנין:</span>
+                    <span class="info-value">${binian}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">גזרה:</span>
+                    <span class="info-value">${gizra}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">פעולה:</span>
+                    <span class="info-value">${peula}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">ID:</span>
+                    <span class="info-value">${idArb}</span>
+                </div>
+            </div>
+            
+            ${quoteBoxHtml}
+            
+            <h2 class="section-title">צורות הפועל</h2>
+            ${verbFormsHtml}
+            
+            <h2 class="section-title">הטיות - חיוב</h2>
+            ${positiveTableHtml}
+            
+            <h2 class="section-title">הטיות - שלילה</h2>
+            ${negativeTableHtml}
+            
+            ${examplesHtml}
+            
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="credit-item">
+                    <span class="credit-text">המידע בדף זה מוגש באדיבות האתר</span>
+                    <a href="https://roadtorecovery.org.il/Spokenarabic/" target="_blank" class="credit-link">"ערבית מדוברת"</a>
+                </div>
+                <div class="separator">•</div>
+                <div class="credit-item">
+                    <span class="credit-text">הדף יוצר ע"י AI באמצעות MCP שזמין</span>
+                    <a href="https://github.com/avi-the-coach/spoken-il-arabic-mcp" target="_blank" class="credit-link">בקוד פתוח</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>`;
+}
+
+/**
+ * Generate verb forms section from audio data
+ */
+function generateVerbForms(audio: any, meaning: string): string {
+  const poal = audio?.poal || 'לא זמין';
+  const paul = audio?.paul || 'לא זמין';
+  
+  return `
+    <div class="verb-forms">
+        <div class="verb-card">
+            <div class="verb-type">פועל זכר</div>
+            <div class="verb-form">${poal}</div>
+            <div class="verb-meaning">${meaning}</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פועל נקבה</div>
+            <div class="verb-form">${poal}ה</div>
+            <div class="verb-meaning">${meaning}</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול זכר</div>
+            <div class="verb-form">${paul}</div>
+            <div class="verb-meaning">${meaning}</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול נקבה</div>
+            <div class="verb-form">${paul}ה</div>
+            <div class="verb-meaning">${meaning}</div>
+        </div>
+    </div>`;
+}
+
+/**
+ * Generate conjugation table for positive or negative forms
+ */
+function generateConjugationTable(conjugations: Conjugation[], type: 'positive' | 'negative'): string {
+  if (!conjugations || conjugations.length === 0) {
+    return `<table>
+        <thead>
+            <tr>
+                <th>גוף</th>
+                <th>עבר</th>
+                <th>הווה</th>
+                <th>עתיד</th>
+                <th>ציווי</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5" style="text-align: center; color: #6b7280; font-style: italic;">נתונים לא זמינים</td>
+            </tr>
+        </tbody>
+    </table>`;
+  }
+
+  const rows = conjugations.map(conj => {
+    const avar = type === 'positive' ? conj.avar : (conj as any).avarS || 'לא זמין';
+    const hoveh = type === 'positive' ? conj.hoveh : (conj as any).hovehS || 'לא זמין';
+    const atid = type === 'positive' ? conj.atid : (conj as any).atidS || 'לא זמין';
+    const zivoi = type === 'positive' ? conj.zivoi : (conj as any).zivoiS || 'לא זמין';
+
+    return `
+        <tr>
+            <td class="person-label">${conj.who}</td>
+            <td>${avar}</td>
+            <td>${hoveh}</td>
+            <td>${atid}</td>
+            <td>${zivoi}</td>
+        </tr>`;
+  }).join('');
+
+  return `<table>
+        <thead>
+            <tr>
+                <th>גוף</th>
+                <th>עבר</th>
+                <th>הווה</th>
+                <th>עתיד</th>
+                <th>ציווי</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${rows}
+        </tbody>
+    </table>`;
+}
+
+/**
+ * Generate examples section if available
+ */
+function generateExamples(sentences: any): string {
+  if (!sentences?.sentences || sentences.sentences.length === 0) {
+    return '';
+  }
+
+  const examples = sentences.sentences.map((sentence: any) => `
+        <div class="example-item">
+            <div class="example-arabic">${sentence.exmpla || 'לא זמין'}</div>
+            <div class="example-hebrew">${sentence.exmplh || 'לא זמין'}</div>
+        </div>`).join('');
+
+  return `
+        <h2 class="section-title">דוגמאות שימוש</h2>
+        <div class="examples">
+            ${examples}
+        </div>`;
+}
+
+/**
+ * Generate quote box for special notes
+ */
+function generateQuoteBox(heaarot: string): string {
+  return `
+        <div class="quote-box">
+            <div class="quote-text">${heaarot}</div>
+        </div>`;
+}

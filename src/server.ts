@@ -191,7 +191,7 @@ export class SpokenArabicMCPServer {
       include_negation = false 
     } = args;
     
-    const conjugation = await this.conjugationTool.getRootConjugation(root_id, {
+    const result = await this.conjugationTool.getRootConjugation(root_id, {
       includeAudio: include_audio,
       includeExamples: include_examples,
       includeNegation: include_negation,
@@ -201,7 +201,7 @@ export class SpokenArabicMCPServer {
       content: [
         {
           type: 'text',
-          text: JSON.stringify({ conjugation }, null, 2),
+          text: JSON.stringify(result, null, 2),
         },
       ],
     };
