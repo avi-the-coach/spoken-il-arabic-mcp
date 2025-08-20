@@ -41,6 +41,8 @@ For an enhanced user experience with formatted Arabic root pages and better data
 
 These instructions help Claude Desktop (or any MCP-supporting client) transform raw conjugation data into polished, educational content.
 
+**Note:** Copy the contents of this instructions file into the instruction section of your favorite AI client for optimal results.
+
 ## Available Tools
 
 ### 1. search_arabic_roots
