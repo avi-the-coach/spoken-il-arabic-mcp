@@ -1,12 +1,14 @@
 {
   "name": "spoken-il-arabic-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "MCP Server for Arabic Palestinian conjugation and dictionary lookup",
   "main": "dist/index.js",
   "bin": {
     "spoken-il-arabic-mcp": "dist/index.js"
   },
+  "preferGlobal": true,
+  "os": ["win32", "darwin", "linux"],
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/index.ts",

@@ -13,15 +13,8 @@ An MCP (Model Context Protocol) server that provides access to Arabic Palestinia
 ## Installation
 
 ```bash
-npm install -g git+https://github.com/avi-the-coach/spoken-il-arabic-mcp.git
-```
-
-Or from npm (once published):
-```bash
 npm install -g spoken-il-arabic-mcp
 ```
-
-💡 **Having issues?** See [INSTALL.md](./INSTALL.md) for troubleshooting
 
 ## Usage with Claude
 
