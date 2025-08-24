@@ -1,6 +1,6 @@
 {
   "name": "spoken-il-arabic-mcp",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "module",
   "description": "MCP Server for Arabic Palestinian conjugation and dictionary lookup",
   "main": "dist/index.js",
@@ -25,7 +25,9 @@
     "palestinian",
     "conjugation",
     "dictionary",
-    "language-learning"
+    "language-learning",
+    "html-formatter",
+    "rtl"
   ],
   "author": "Claude (Anthropic) & Avi Bechar",
   "license": "MIT",
