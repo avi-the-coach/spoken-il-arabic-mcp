@@ -1,46 +1,9 @@
-/**
- * HTML formatter utility for Arabic root conjugation pages
- * Based on claude-desktop-project-instructions.md template
- */
-
-import { ConjugationResponse, Conjugation } from '../types/api.js';
-
-/**
- * Format conjugation data into a complete HTML page
- */
-export function formatRootPage(data: ConjugationResponse): string {
-  const { root, audio, sentences } = data;
-  
-  // Extract basic information
-  const hebrewRoot = root.shoresh || '-';
-  const arabicRoot = root.shoreshArabic || '-';
-  const meaning = root.mashmaut?.join(', ') || '-';
-  const binian = root.binian || '-';
-  const gizra = root.gizra || '-';
-  const peula = root.peula || '-';
-  const idArb = root.idArb || '-';
-  const heaarot = root.heaarot || '';
-
-  // Generate verb forms section with actual conjugation data
-  const verbFormsHtml = generateVerbForms(root.hataiot, meaning);
-  
-  // Generate conjugation tables
-  const positiveTableHtml = generateConjugationTable(root.hataiot, 'positive');
-  const negativeTableHtml = generateConjugationTable(root.hataiot, 'negative');
-  
-  // Generate examples section if available (place before tables)
-  const examplesHtml = generateExamples(sentences);
-  
-  
-  // Generate quote box if there are notes
-  const quoteBoxHtml = heaarot ? generateQuoteBox(heaarot) : '';
-
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>שורש ערבי: ${hebrewRoot} (${meaning})</title>
+    <title>שורש ערבי: חרבּ (להלחם - חרבּ, פאעל 3)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
         
@@ -409,44 +372,208 @@ export function formatRootPage(data: ConjugationResponse): string {
     <div class="container">
         <div class="header">
             <div class="root-main">
-                <h1 class="root-title">${hebrewRoot}</h1>
-                <div class="root-arabic">${arabicRoot}</div>
+                <h1 class="root-title">חרבּ</h1>
+                <div class="root-arabic">حرب</div>
             </div>
-            <div class="meaning">${meaning}</div>
+            <div class="meaning">להלחם - חרבּ, פאעל 3</div>
         </div>
         
         <div class="content">
             <div class="info-section">
                 <div class="info-item">
                     <span class="info-label">בנין:</span>
-                    <span class="info-value">${binian}</span>
+                    <span class="info-value">פאעל 3</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">גזרה:</span>
-                    <span class="info-value">${gizra}</span>
+                    <span class="info-value">שלמים</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">פעולה:</span>
-                    <span class="info-value">${peula}</span>
+                    <span class="info-value">מְחָארָבֶּה</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">ID:</span>
-                    <span class="info-value">${idArb}</span>
+                    <span class="info-value">حرب فاعل 3</span>
                 </div>
             </div>
             
-            ${quoteBoxHtml}
+            
             
             <h2 class="section-title">צורות הפועל</h2>
-            ${verbFormsHtml}
             
-            ${examplesHtml}
+    <div class="verb-forms">
+        <div class="verb-card">
+            <div class="verb-type">פועל זכר</div>
+            <div class="verb-form">מְחָארֶבּ</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פועל נקבה</div>
+            <div class="verb-form">מְחָארְבֶּה</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פועל רבים</div>
+            <div class="verb-form">מְחָארְבִּין</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול זכר</div>
+            <div class="verb-form">מְחָארָבּ</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול נקבה</div>
+            <div class="verb-form">מְחָארָבֶּה</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול רבים</div>
+            <div class="verb-form">מְחָארָבִּין</div>
+        </div>
+    </div>
+            
+            
             
             <h2 class="section-title">הטיות - חיוב</h2>
-            ${positiveTableHtml}
+            <table>
+        <thead>
+            <tr>
+                <th>גוף</th>
+                <th>עבר</th>
+                <th>הווה</th>
+                <th>עתיד</th>
+                <th>ציווי</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td class="person-label">אָנָא</td>
+            <td>חָארָבְּת</td>
+            <td>בָּחָארֶבּ</td>
+            <td>רָח אָחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתָ</td>
+            <td>חָארָבְּת</td>
+            <td>בִּתְחָארֶבּ</td>
+            <td>רָח תְחָארֶבּ</td>
+            <td>חָארֶבּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתִי</td>
+            <td>חָארָבְּתִי</td>
+            <td>בִּתְחָארְבִּי</td>
+            <td>רָח תְחָארְבִּי</td>
+            <td>חָארְבִּי</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּוֶ</td>
+            <td>חָארָבּ</td>
+            <td>בִּיחָארֶבּ</td>
+            <td>רָח יְחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">הִייֶ</td>
+            <td>חָארָבָּת</td>
+            <td>בִּתְחָארֶבּ</td>
+            <td>רָח תְחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִחְנָא</td>
+            <td>חָארָבְּנָא</td>
+            <td>בִּנְחָארֶבּ</td>
+            <td>רָח נְחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתוּ</td>
+            <td>חָארָבְּתוּ</td>
+            <td>בִּתְחָארְבּוּ</td>
+            <td>רָח תְחָארְבּוּ</td>
+            <td>חָארְבּוּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּמֶ</td>
+            <td>חָארָבּוּ</td>
+            <td>בִּיחָארְבּוּ</td>
+            <td>רָח יְחָארְבּוּ</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
             
             <h2 class="section-title">הטיות - שלילה</h2>
-            ${negativeTableHtml}
+            <table>
+        <thead>
+            <tr>
+                <th>גוף</th>
+                <th>עבר</th>
+                <th>הווה</th>
+                <th>עתיד</th>
+                <th>ציווי</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td class="person-label">אָנָא</td>
+            <td>מָא חָארָבְּתֶש</td>
+            <td>מָא בָּחָארֶבְּש</td>
+            <td>מִש רָח אָחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתָ</td>
+            <td>מָא חָארָבְּתֶש</td>
+            <td>מָא בִּתְחָארֶבְּש</td>
+            <td>מִש רָח תְחָארֶבּ</td>
+            <td>מָא תְחָארֶבּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתִי</td>
+            <td>מָא חָארָבְּתִיש</td>
+            <td>מָא בִּתְחָארְבִּיש</td>
+            <td>מִש רָח תְחָארְבִּי</td>
+            <td>מָא תְחָארְבִּי</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּוֶ</td>
+            <td>מָא חָארָבֶּש</td>
+            <td>מָא בִּיחָארֶבֶּש</td>
+            <td>מִש רָח יְחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">הִייֶ</td>
+            <td>מָא חָארְבָּתְש</td>
+            <td>מָא בִּתְחָארֶבְּש</td>
+            <td>מִש רָח תְחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִחְנָא</td>
+            <td>מָא חָארָבְּנָאש</td>
+            <td>מָא בִּנְחָארֶבְּש</td>
+            <td>מִש רָח נְחָארֶבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתוּ</td>
+            <td>מָא חָארָבְּתוּש</td>
+            <td>מָא בִּתְחָארְבּוּש</td>
+            <td>מִש רָח תְחָארְבּוּ</td>
+            <td>מָא תְחָארְבּוּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּמֶ</td>
+            <td>מָא חָארָבּוּש</td>
+            <td>מָא בִּיחָארְבּוּש</td>
+            <td>מִש רָח יְחָארְבּוּ</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
             
             
         </div>
@@ -466,160 +593,4 @@ export function formatRootPage(data: ConjugationResponse): string {
         </div>
     </div>
 </body>
-</html>`;
-}
-
-/**
- * Generate verb forms section from actual conjugation data
- */
-function generateVerbForms(conjugations: Conjugation[], meaning: string): string {
-  // Extract verb forms from conjugation data
-  const maleForm = conjugations?.find(c => c.who === 'אִנְתָ');
-  const femaleForm = conjugations?.find(c => c.who === 'אִנְתִי');
-  const pluralForm = conjugations?.find(c => c.who === 'אִנְתוּ');
-  
-  const poelMale = maleForm?.poel || '-';
-  const paulMale = maleForm?.paul || '-';
-  const poelFemale = femaleForm?.poel || '-';
-  const paulFemale = femaleForm?.paul || '-';
-  const poelPlural = pluralForm?.poel || '-';
-  const paulPlural = pluralForm?.paul || '-';
-  
-  return `
-    <div class="verb-forms">
-        <div class="verb-card">
-            <div class="verb-type">פועל זכר</div>
-            <div class="verb-form">${poelMale}</div>
-        </div>
-        <div class="verb-card">
-            <div class="verb-type">פועל נקבה</div>
-            <div class="verb-form">${poelFemale}</div>
-        </div>
-        <div class="verb-card">
-            <div class="verb-type">פועל רבים</div>
-            <div class="verb-form">${poelPlural}</div>
-        </div>
-        <div class="verb-card">
-            <div class="verb-type">פעול זכר</div>
-            <div class="verb-form">${paulMale}</div>
-        </div>
-        <div class="verb-card">
-            <div class="verb-type">פעול נקבה</div>
-            <div class="verb-form">${paulFemale}</div>
-        </div>
-        <div class="verb-card">
-            <div class="verb-type">פעול רבים</div>
-            <div class="verb-form">${paulPlural}</div>
-        </div>
-    </div>`;
-}
-
-/**
- * Generate conjugation table for positive or negative forms
- */
-function generateConjugationTable(conjugations: Conjugation[], type: 'positive' | 'negative'): string {
-  if (!conjugations || conjugations.length === 0) {
-    return `<table>
-        <thead>
-            <tr>
-                <th>גוף</th>
-                <th>עבר</th>
-                <th>הווה</th>
-                <th>עתיד</th>
-                <th>ציווי</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="5" style="text-align: center; color: #6b7280; font-style: italic;">נתונים לא זמינים</td>
-            </tr>
-        </tbody>
-    </table>`;
-  }
-
-  const rows = conjugations.map(conj => {
-    const avar = type === 'positive' ? conj.avar : (conj as any).avarS || '-';
-    const hoveh = type === 'positive' ? conj.hoveh : (conj as any).hovehS || '-';
-    const atid = type === 'positive' ? conj.atid : (conj as any).atidS || '-';
-    const zivoi = type === 'positive' ? conj.zivoi : (conj as any).zivoiS || '-';
-
-    return `
-        <tr>
-            <td class="person-label">${conj.who}</td>
-            <td>${avar || '-'}</td>
-            <td>${hoveh || '-'}</td>
-            <td>${atid || '-'}</td>
-            <td>${zivoi || '-'}</td>
-        </tr>`;
-  }).join('');
-
-  return `<table>
-        <thead>
-            <tr>
-                <th>גוף</th>
-                <th>עבר</th>
-                <th>הווה</th>
-                <th>עתיד</th>
-                <th>ציווי</th>
-            </tr>
-        </thead>
-        <tbody>
-            ${rows}
-        </tbody>
-    </table>`;
-}
-
-/**
- * Generate examples section if available
- */
-function generateExamples(sentences: any): string {
-  if (!sentences?.sentences || sentences.sentences.length === 0) {
-    return '';
-  }
-
-  const examples = sentences.sentences.map((sentence: any) => {
-    // Skip empty examples
-    if (!sentence.exmpla && !sentence.exmplh) {
-      return '';
-    }
-    
-    return `
-        <div class="example-item">
-            ${sentence.usea && sentence.useh ? `
-            <div class="example-usage">
-                <span class="usage-arabic">${sentence.usea}</span>
-                <span class="usage-separator">•</span>
-                <span class="usage-hebrew">${sentence.useh}</span>
-            </div>` : ''}
-            <div class="example-arabic">${sentence.exmpla || '-'}</div>
-            <div class="example-hebrew">${sentence.exmplh || '-'}</div>
-        </div>`;
-  }).filter(Boolean).join('');
-
-  return `
-        <div class="examples-highlight">
-            <h2 class="section-title">דוגמאות שימוש</h2>
-            <div class="examples">
-                ${examples}
-            </div>
-        </div>`;
-}
-
-/**
- * Generate quote box for special notes
- */
-function generateQuoteBox(heaarot: string): string {
-  // Split by <br> and handle the first line (Arabic) differently
-  const parts = heaarot.split('<br>');
-  const arabicText = parts[0] || '';
-  const translations = parts.slice(1).join('<br>');
-  
-  return `
-        <div class="quote-box">
-            <div class="quote-text">
-                <div class="quote-arabic">${arabicText}</div>
-                ${translations ? `<div class="quote-translation">${translations}</div>` : ''}
-            </div>
-        </div>`;
-}
-
+</html>

@@ -7,8 +7,15 @@ An MCP (Model Context Protocol) server that provides access to Arabic Palestinia
 - 🔍 **Search Arabic Roots**: Find roots by Hebrew meaning, Arabic transliteration, or root patterns
 - 📚 **Full Conjugations**: Get complete conjugation tables with all verb forms  
 - 🔄 **Similar Roots**: Discover related roots by pattern, meaning, or phonetic similarity
+- 🎨 **HTML Formatting**: Built-in beautiful HTML page generation for Arabic roots with RTL support
 - 🌐 **Hebrew/Arabic Support**: Proper handling of bidirectional text and UTF-8 encoding
 - ⚡ **Fast & Reliable**: Built with TypeScript for robust error handling
+
+## Prerequisites
+
+- **Node.js** ≥ 18.0.0
+- **npm** (included with Node.js)
+- **AI Client** supporting MCP (such as Claude Desktop)
 
 ## Installation
 
@@ -16,7 +23,7 @@ An MCP (Model Context Protocol) server that provides access to Arabic Palestinia
 npm install -g spoken-il-arabic-mcp
 ```
 
-## Usage with Claude
+## Usage with Claude Desktop
 
 Add to your Claude Desktop configuration:
 
@@ -30,18 +37,17 @@ Add to your Claude Desktop configuration:
 }
 ```
 
-## Enhanced Usage Instructions
+## HTML Formatting Feature
 
-For an enhanced user experience with formatted Arabic root pages and better data presentation, see the [Claude Desktop Project Instructions](./claude-desktop-project-instructions.md). This file contains detailed guidelines for:
+This MCP server includes built-in HTML formatting capabilities that automatically generate beautifully styled Arabic root pages. When used with AI clients like Claude Desktop, the server can produce:
 
-- Creating beautifully formatted HTML pages for Arabic roots
-- Processing MCP data into user-friendly presentations  
-- Step-by-step workflows for Hebrew-to-Arabic root lookups
-- Custom CSS templates and styling guidelines
+- 🎯 **Complete Root Pages**: Hebrew/Arabic roots with full conjugation tables
+- 📊 **Verb Forms**: All 6 verb forms (poel/paul in male/female/plural)  
+- 🌐 **RTL Support**: Proper right-to-left Arabic text rendering
+- 📱 **Responsive Design**: Works on desktop and mobile devices
+- 🎨 **Clean Styling**: Professional layout with subtle purple accents
 
-These instructions help Claude Desktop (or any MCP-supporting client) transform raw conjugation data into polished, educational content.
-
-**Note:** Copy the contents of this instructions file into the instruction section of your favorite AI client for optimal results.
+Simply ask your AI client to "create an HTML page for [Hebrew word]" and the server will handle the complete workflow from search to formatted output.
 
 ## Available Tools
 
@@ -167,8 +173,9 @@ src/
 ├── types/
 │   └── api.ts        # TypeScript interfaces
 └── utils/
-    ├── formatter.ts  # Text processing utilities
-    └── validator.ts  # Input validation
+    ├── formatter.ts     # Text processing utilities
+    ├── htmlFormatter.ts # HTML page generation
+    └── validator.ts     # Input validation
 ```
 
 ## Error Handling

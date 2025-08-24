@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שורש ערבי: ג'יבּ (להביא - ג'יבּ, פעל 1)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Assistant', 'Segoe UI', Tahoma, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.4;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px 25px 15px;
+            border-bottom: 2px solid #8b5cf6;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            filter: blur(0.5px);
+        }
+        
+        .root-main {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .root-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-shadow: 0 1px 2px rgba(139, 92, 246, 0.1);
+        }
+        
+        .root-arabic {
+            font-size: 1.8rem;
+            color: #6b7280;
+            font-weight: 400;
+        }
+        
+        .meaning {
+            font-size: 1rem;
+            color: #8b5cf6;
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 20px 25px;
+        }
+        
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+            min-width: 60px;
+        }
+        
+        .info-value {
+            color: #1f2937;
+            font-size: 0.95rem;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 25px 0 12px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #8b5cf6;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #8b5cf6;
+            border-radius: 1px;
+        }
+        
+        .verb-forms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .verb-card {
+            text-align: center;
+            padding: 10px 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: white;
+            transition: all 0.2s ease;
+        }
+        
+        .verb-card:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .verb-type {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .verb-form {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        
+        .verb-meaning {
+            font-size: 0.8rem;
+            color: #8b5cf6;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        th {
+            background: #f8fafc;
+            color: #374151;
+            padding: 8px 10px;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+        }
+        
+        td {
+            padding: 6px 10px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: background 0.2s ease;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        tr:hover {
+            background: #f3f4f6;
+        }
+        
+        .person-label {
+            text-align: right !important;
+            font-weight: 600;
+            color: #374151;
+            background: #f1f5f9 !important;
+            font-size: 0.85rem;
+        }
+        
+        .examples {
+            background: #f8fafc;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .example-item {
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border-right: 3px solid #8b5cf6;
+        }
+        
+        .example-arabic {
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .example-hebrew {
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .example-usage {
+            text-align: right;
+            margin-bottom: 6px;
+            padding: 4px 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .usage-arabic {
+            color: #374151;
+            direction: rtl;
+        }
+        
+        .usage-separator {
+            color: #9ca3af;
+            margin: 0 8px;
+        }
+        
+        .usage-hebrew {
+            color: #6b7280;
+            direction: ltr;
+            font-weight: 500;
+        }
+        
+        .quote-box {
+            background: #f8fafc;
+            color: #374151;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #8b5cf6;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .quote-text {
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .quote-arabic {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+        
+        .quote-translation {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #6b7280;
+        }
+        
+        .examples-highlight {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 2px solid #8b5cf6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+        }
+        
+        .examples-highlight .section-title {
+            color: #8b5cf6;
+            border-bottom-color: #8b5cf6;
+            margin-top: 0;
+        }
+        
+        
+        .footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 12px 25px;
+            margin-top: 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .credit-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .credit-text {
+            color: #6b7280;
+        }
+        
+        .credit-link {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .credit-link:hover {
+            color: #7c3aed;
+            border-bottom-color: #7c3aed;
+        }
+        
+        .separator {
+            color: #d1d5db;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+            
+            .separator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="root-main">
+                <h1 class="root-title">ג'יבּ</h1>
+                <div class="root-arabic">جيب</div>
+            </div>
+            <div class="meaning">להביא - ג'יבּ, פעל 1</div>
+        </div>
+        
+        <div class="content">
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="info-label">בנין:</span>
+                    <span class="info-value">פעל 1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">גזרה:</span>
+                    <span class="info-value">ע"י</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">פעולה:</span>
+                    <span class="info-value">גֶ'יבּ</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">ID:</span>
+                    <span class="info-value">جيب فعل 1</span>
+                </div>
+            </div>
+            
+            
+        <div class="quote-box">
+            <div class="quote-text">
+                <div class="quote-arabic">ג'ית ואללה ג'אבכ</div>
+                <div class="quote-translation">פרוש: באת בזמן<br>באת ואלוהים הביא אותך</div>
+            </div>
+        </div>
+            
+            <h2 class="section-title">צורות הפועל</h2>
+            
+    <div class="verb-forms">
+        <div class="verb-card">
+            <div class="verb-type">פועל זכר</div>
+            <div class="verb-form">גָ'איֶבּ</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פועל נקבה</div>
+            <div class="verb-form">גָ'איְבֶּה</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פועל רבים</div>
+            <div class="verb-form">גָ'איְבִּין</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול זכר</div>
+            <div class="verb-form">מָגְ'יוּבּ</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול נקבה</div>
+            <div class="verb-form">מָגְ'יוּבָּה</div>
+        </div>
+        <div class="verb-card">
+            <div class="verb-type">פעול רבים</div>
+            <div class="verb-form">מָגְ'יוּבִּין</div>
+        </div>
+    </div>
+            
+            
+        <div class="examples-highlight">
+            <h2 class="section-title">דוגמאות שימוש</h2>
+            <div class="examples">
+                
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב ל, עלא, מן</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא</span>
+            </div>
+            <div class="example-arabic">אמי ג'אבת לי הדיה לעיד מילאדי</div>
+            <div class="example-hebrew">אמי הביאה לי מתנה ליום ההולדת</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'יב</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הבא</span>
+            </div>
+            <div class="example-arabic">רוח וג'יב לי פנג'אן קהווה מן אבו מחמוד!</div>
+            <div class="example-hebrew">לך והבא לי ספלון קפה מאבו מחמוד!</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא</span>
+            </div>
+            <div class="example-arabic">ג'וואלכ ביעג'יבני, מן ווין ג'יבתו?</div>
+            <div class="example-hebrew">הטלפון הסלולרי שלך מוצא חן בעיני, מאיפה הבאת אותו</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">אסף</span>
+            </div>
+            <div class="example-arabic">מומכן תג'יב אוח'תי מן (אל)ג'אמעה, א(ל)סיעה מתאח'רה ומפיש באס'את</div>
+            <div class="example-hebrew">אתה יכול לאסוף את אחותי מהאוניברסיטה? השעה מאוחרת וכבר אין אוטובוסים</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא</span>
+            </div>
+            <div class="example-arabic">מא תנסאש תג'יב (אל)דיסכ און קי למא תיג'י לענדי</div>
+            <div class="example-hebrew">אל תשכח להביא את הדיסכ און קי כשאתה בא אלי</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אבת</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביאה ילדים לעולם</span>
+            </div>
+            <div class="example-arabic">ג'ארתנא ג'אבת תום וולאד אלחמדללה</div>
+            <div class="example-hebrew">השכנה שלנו ילדה תאומים בנים השבח לאל.</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא תוצאות</span>
+            </div>
+            <div class="example-arabic">חרכת חוקוק (א)למראה ג'אבת חוריית (אל)תס'ווית לכתיר דוול פי (א)לעאלם</div>
+            <div class="example-hebrew">התנועה לזכויות האשה הביאה חופש הצבעה להרבה מדינות בעולם. </div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא תמיכה</span>
+            </div>
+            <div class="example-arabic">ג'מעיית (אל)טריק אילא (אל)שיפאא בתג'יב דעם מן כתיר מותברעין</div>
+            <div class="example-hebrew">עמותת בדרך להחלמה מביאה תמיכה מהרבה תורמים</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב ריבח</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הרוויח</span>
+            </div>
+            <div class="example-arabic">שרכה כבירה בדהא עלא (א)לאקל עידת סנין חתא תג'יב ריבח</div>
+            <div class="example-hebrew">חברה גדולה צריכה לפחות מספר שנים עד שתראה/תביא רווח</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב עאר</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">המיט בושה</span>
+            </div>
+            <div class="example-arabic">תס'רופאתכ ג'אבת עאר עלא עילתכ. </div>
+            <div class="example-hebrew">ההתנהגות שלך גרמה בושה למשפחתך.</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב עַלַאמה, מְעַדַל</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא ציונים, ממוצע</span>
+            </div>
+            <div class="example-arabic">אבוי רח ידבחני! ג'יבת עלאמה זי (אל)זפת פי (א)לאמתחאן (א)לאח'יר</div>
+            <div class="example-hebrew">אבא שלי יהרוג אותי! הבאת ציון על הפנים בבחינה האחרונה.</div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אב לחאלו</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא על עצמו</span>
+            </div>
+            <div class="example-arabic">כתיר מראת נס'חתכ ומא רדית. והיכ ג'יבת כול (א)למשאכל לחאלכ.</div>
+            <div class="example-hebrew">הרבה פעמים ייעצתי לך ולא נענית/השבת, וכך הבאת את הבעיות/צרות על עצמך. </div>
+        </div>
+        <div class="example-item">
+            
+            <div class="example-usage">
+                <span class="usage-arabic">ג'אבהא</span>
+                <span class="usage-separator">•</span>
+                <span class="usage-hebrew">הביא אותה</span>
+            </div>
+            <div class="example-arabic">מסי ג'אב ד'רבה/רפס'ה חלווה כתיר פי (אל)דקיקה (א)לאח'ירה וג'אבהא דור'י לִזַאוִויַת (א)למַרְמַא.  </div>
+            <div class="example-hebrew">מסי בעט בעיטה נהדרת בדקה האחרונה והביא אותה ישר לחיבורים (פינת השער)</div>
+        </div>
+            </div>
+        </div>
+            
+            <h2 class="section-title">הטיות - חיוב</h2>
+            <table>
+        <thead>
+            <tr>
+                <th>גוף</th>
+                <th>עבר</th>
+                <th>הווה</th>
+                <th>עתיד</th>
+                <th>ציווי</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td class="person-label">אָנָא</td>
+            <td>גִ'בְּת</td>
+            <td>בָּגִ'יבּ</td>
+            <td>רָח אָגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתָ</td>
+            <td>גִ'בְּת</td>
+            <td>בְּתְגִ'יבּ</td>
+            <td>רָח תְגִ'יבּ</td>
+            <td>גִ'יבּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתִי</td>
+            <td>גִ'בְּתִי</td>
+            <td>בְּתְגִ'יבִּי</td>
+            <td>רָח תְגִ'יבִּי</td>
+            <td>גִ'יבִּי</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּוֶ</td>
+            <td>גָ'אבּ</td>
+            <td>בִּיגִ'יבּ</td>
+            <td>רָח יְגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">הִייֶ</td>
+            <td>גָ'אבָּת</td>
+            <td>בְּתְגִ'יבּ</td>
+            <td>רָח תְגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִחְנָא</td>
+            <td>גִ'בְּנָא</td>
+            <td>בִּנְגִ'יבּ</td>
+            <td>רָח נְגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתוּ</td>
+            <td>גִ'בְּתוּ</td>
+            <td>בְּתְגִ'יבּוּ</td>
+            <td>רָח תְגִ'יבּוּ</td>
+            <td>גִ'יבּוּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּמֶ</td>
+            <td>גָ'אבּוּ</td>
+            <td>בְּיגִ'יבּוּ</td>
+            <td>רָח יְגִ'יבּוּ</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+            
+            <h2 class="section-title">הטיות - שלילה</h2>
+            <table>
+        <thead>
+            <tr>
+                <th>גוף</th>
+                <th>עבר</th>
+                <th>הווה</th>
+                <th>עתיד</th>
+                <th>ציווי</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td class="person-label">אָנָא</td>
+            <td>מָא גִ'בְּתֶש</td>
+            <td>מָא בָּגִ'יבְּש</td>
+            <td>מִש רָח אָגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתָ</td>
+            <td>מָא גִ'בְּתֶש</td>
+            <td>מָא בְּתְגִ'יבְּש</td>
+            <td>מִש רָח תְגִ'יבּ</td>
+            <td>מָא תְגִ'יבּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתִי</td>
+            <td>מָא גִ'בְּתִיש</td>
+            <td>מָא בְּתְגִ'יבִּיש</td>
+            <td>מִש רָח תְגִ'יבִּי</td>
+            <td>מָא תְגִ'יבִּי</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּוֶ</td>
+            <td>מָא גָ'אבְּש</td>
+            <td>מָא בְּגִ'יבְּש</td>
+            <td>מִש רָח יְגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">הִייֶ</td>
+            <td>מָא גָ'אבָּתְש</td>
+            <td>מָא בִּתְגִ'יבְּש</td>
+            <td>מִש רָח תְגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִחְנָא</td>
+            <td>מָא גִ'בְּנָאש</td>
+            <td>מָא בִּנְגִ'יבְּש</td>
+            <td>מִש רָח נְגִ'יבּ</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td class="person-label">אִנְתוּ</td>
+            <td>מָא גִ'בְּתוּש</td>
+            <td>מָא בְּתְגִ'יבּוּש</td>
+            <td>מִש רָח תְגִ'יבּוּ</td>
+            <td>מָא תְגִ'יבּוּ</td>
+        </tr>
+        <tr>
+            <td class="person-label">הוּמֶ</td>
+            <td>מָא גָ'אבּוּש</td>
+            <td>מָא בְּיגִ'יבּוּש</td>
+            <td>מִש רָח יְגִ'יבּוּ</td>
+            <td>-</td>
+        </tr>
+        </tbody>
+    </table>
+            
+            
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="credit-item">
+                    <span class="credit-text">המידע בדף זה מוגש באדיבות האתר</span>
+                    <a href="https://roadtorecovery.org.il/Spokenarabic/" target="_blank" class="credit-link">"ערבית מדוברת"</a>
+                </div>
+                <div class="separator">•</div>
+                <div class="credit-item">
+                    <span class="credit-text">הדף יוצר ע"י AI באמצעות MCP שזמין</span>
+                    <a href="https://github.com/avi-the-coach/spoken-il-arabic-mcp" target="_blank" class="credit-link">בקוד פתוח</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
