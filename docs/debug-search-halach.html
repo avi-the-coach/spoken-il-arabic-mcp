@@ -1,0 +1,1351 @@
+
+<!-- Language="VBScript" CodePage="65001"-->
+<!-- Language="VBScript" CodePage="1255"-->
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    
+
+	<meta charset="UTF-8">
+    <meta property="og:site_name" content="מילון ערבית מדוברת"/>
+    <meta property="fb:app_id" content="1067216663704512" />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:locale:alternate" content="ar_JO" />
+    <meta property="og:locale:alternate" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/nav.css" />
+	<link rel="stylesheet" href="css/arabic_constant.css?v=2" />
+	<link rel="stylesheet" href="css/arabic_upto499wide.css" media="(max-width:499px)" />
+    <link rel="stylesheet" href="css/arabic_from500wide.css" media="(min-width:500px)" />
+	<link rel="stylesheet" href="css/arabic_upto499high.css" media="(max-height:499px)" />
+    <link rel="stylesheet" href="css/arabic_from500high.css" media="(min-height:500px)" />
+	<link rel="shortcut icon" href="img/site/favicon.ico" />
+    <link rel="image_src" href="img/site/logo.jpg" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="3b098d21b69736d60e45946e-text/javascript"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z" type="3b098d21b69736d60e45946e-text/javascript"></script>
+    <script type="3b098d21b69736d60e45946e-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3KCSSVHC9Z');
+    </script>
+
+    <title>מילון ערבית מדוברת - לדוברי עברית</title>
+    <meta name="Description" content="המילון לערבית מדוברת (לדוברי עברית) הוא שירות חינמי שנועד לעזור לקהילת לומדי הערבית המדוברת" />
+    <!--meta name="Keywords" content="מילון, ערבית, מדוברת, עברית, עברי, ערבי, חופשי, חינם, חינמי, תרגום, תירגום, מילים, איך, אומרים, בערבית" /> up to 2021-06 -->
+    <meta name="Keywords" content="מילון עברי ערבי, תרגום עברית ערבית, מילון ערבי עברי, תרגום מעברית לערבית, תרגום ערבית עברית, מתרגם עברית ערבית" /> <!-- since 2021-06 -->
+    <meta property="og:title" content="מילון ערבית מדוברת - לדוברי עברית" />
+    <meta property="og:description" content="המילון לערבית מדוברת (לדוברי עברית) הוא שירות חינמי שנועד לעזור לקהילת לומדי הערבית המדוברת" />
+    <meta property="og:url" content="https://milon.madrasafree.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/site/og-image.png">
+    <style>
+        /* loading animation START - this code is DUPLIC from edit.css - MERGE needed */
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border: 8px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #82b1de transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+            0% {
+            transform: rotate(0deg);
+            }
+            100% {
+            transform: rotate(360deg);
+            }
+        }
+        /* loading animation END */  
+
+        .thumb { text-align: center; margin:10px auto; font-size:x-small;}
+        .thumb img {max-width:90%; border:1px dashed #bbb; max-height:200px;}
+        .credit {max-width:90%; margin: 2px auto;}
+        .activities {display:table; width:90%; margin: 0 auto; border:solid #c267df; border-width:2px 0; background:#c267df26;}
+        .activityBox {display:table-row; font-size:small;}
+        .activityBox > div {display:table-cell; padding:3px 5px;}
+        .activityBox:nth-child(2) > div {border-top: 1px dotted #c267df70; border-bottom: 1px dotted #c267df70;}
+        .activityBox div:last-child {text-align:left;}
+        .activeUserImg {DISPLAY:NONE; background:white; width:30px; border-radius:30%; box-shadow:#2a3035 0px 0px 4px;}
+        #boxMenu {display:flex; justify-content:center; flex-wrap:wrap; max-width:490px; margin:50px auto; text-align: center;}
+        #boxMenu > div {display: inline-block; margin-top:5px; opacity:.7;}
+        #boxMenu > div:hover {opacity:1;}
+        #boxMenu > div > a:hover {text-decoration:none;}
+        #boxMenu > div > a > div {
+            background:lightgreen;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width:144px;
+            height:42px;
+            color:black;
+            margin:2px;
+            }
+        #boxMenu img {opacity: .7;}
+        #boxMenu img:hover {opacity: 1;}
+        #cnt2,#cnt3,#cnt4,#test5 {text-align:right; background:#fff5d7b8; padding-right:10px; border-right: 6px solid #8690ff; color:#8690ff; font-size:1em;}
+        .eng {padding-left: 2px;}
+        .exact {margin-bottom:10px;counter-increment: mega-step;}
+        .exact::before {counter-increment: exactCount; content: counter(mega-step);display: block; padding: 5px 5px 3px 5px; background: #ffffff; width: 10%; text-align: center; border: 1px solid #a5d0f3; border-bottom: 0; margin-top:20px;}
+        .heb {padding-bottom: 4px; padding-right: 2px;}
+        .heb a:link,.heb a:visited {color:#1988cc !important;}
+        .media {margin:0px auto 10px auto; text-align:center; max-width:700px;}
+        .newWord {display:inline-block; font-size: 1em; font-weight:bold; }
+        .newWord a {colorx:#1988cc; }
+        .newWord a:hover {text-decoration: underline;}
+        .noResult {text-align:center; border:1px dotted #bbb; padding: 4px 0; max-width: 450px; margin:0 auto;}
+
+        fieldset { width:90%; border: 1px dashed #c0c0c0; background-color:#ffffff90; margin:0 auto 6px auto; padding:0;}
+        legend {border: 1px dotted #bbb; background: #fefefe; padding: 0 12px; text-align: center;}
+
+
+        .notice {max-width: 440px; margin:30px auto; text-align:center;padding: 10px 0; border-radius: 20px;}
+        .notice:hover {color:black; cursor:pointer; font-weight: 400; background-color:#b6eaf5; }
+        .info {color:#43808e; background: #a6eaf970; border:1px solid #8ab8c3; }
+        .info:hover {background-color: #a6eaf9; border-color:#124e5d;}
+        .feedback {color:#ad8722;border:1px solid #f5bd00; background-color: #ffff0037;}
+        .feedback:hover {background-color: #ffff0057;}
+
+        .or { font-size:small;}
+        .pos,.def {font-size:small;}
+        #related {padding:4px;}
+        .showString {word-break: break-all; font-size:small; text-align:center; margin-bottom:10px;}
+        .search {max-width: 450px; margin: 20px auto 60px auto;}
+        .search > form {background-color:#d5ebfe; padding:10px;}
+        #searchString,#submit {padding:4px; font-size:large;}
+        .icons {display: inline-block; position: absolute; top: 0px; left:0px;}
+        .icons mark {
+            font-size: 0.8em;
+            left: 0px;
+            min-width: 70px;
+            padding: 4px;
+            position: absolute;
+            text-align: center;
+            top: 25px;
+        }
+        .correct {width:15px;opacity:0.4; position: absolute; top:9px; left:5px;}
+        .imgLink {width:25px;opacity:0.5; float: none; position: absolute; top:4px; left: 42px;}
+        .audio {max-width:16px ; opacity: 0.5; float: none; position: absolute; top:9px; left: 26px;}
+        .erroneous {width:15px;opacity:0.7; position: absolute; top:9px; left:5px;}
+
+        body {counter-reset: exactCount;}
+        h1 {display:none;}
+        h2 {
+            text-align:center;
+            font-size:small;
+            font-weight:400;
+            margin:20px auto 10px;
+            background-color:#d5ebfe;
+            line-height:2;
+            }
+        h2 span, h2 div {display: inline-block;}
+        hr {border: 0; height: 1px; 
+          background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+          background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+        }
+
+        #madrasa-welcome{
+            /* display:flex;
+            flex-wrap:wrap; */
+        }
+        #madrasa-welcome .madrasa-welcome-text{
+            flex:2;
+            font-size:20px;
+            font-weight:800;
+            max-width:390px;
+            margin:0 auto;
+        }
+         #madrasa-welcome .madrasa-welcome-img{
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+
+
+        @media (max-width:610px) {
+            hr {margin:10px auto; }
+            .eng,.heb {float:none;}
+            .box {max-width:500px; margin:0 2%;}
+        }        
+
+        @media (min-width:610px) {
+            .box {max-width:500px; margin:0 auto;}
+            .exact .result {
+                font-size: 2em;
+                }
+            .exact mark {
+                min-width:130px;
+                }
+            hr {margin:30px auto; }
+        }        
+
+    </style>
+    <script type="3b098d21b69736d60e45946e-text/javascript">
+        $(document).ready(function(){
+
+            // HIDDEN ON PAGE LOAD
+            $("#tagsCloud").hide();
+
+            // SHOWING NUMBERS NEXT TO SEARCH RESULTS
+            var cnt1 = $("#count1").data("count");
+            if (cnt1 >= 1) $("#msgRsltsExct").show();
+            if (cnt1 == 0) $("#msgRsltsZeroExct").show();
+            if (cnt1 > 1) $("#cnt1").prepend(cnt1+" תוצאות מדויקות");
+            if (cnt1 == 1) $("#cnt1").prepend("תוצאה מדויקת אחת")
+            
+
+            var cnt2 = $("#count2").data("count"); //SOUNDEX
+            if (cnt2 > 1) $("#cnt2").prepend(cnt2+" ");
+            if (cnt2 == 0) $("#cnt2").hide();
+            var cnt3 = $("#count3").data("count");
+            if (cnt3 > 1) $("#cnt3").prepend(cnt3+" ");
+            if (cnt3 == 0) $("#cnt3").hide();
+            var cnt4 = $("#count4").data("count");
+            if (cnt4 > 1) $("#cnt4").prepend(cnt4+" ");
+            if (cnt4 == 0) $("#cnt4").hide();
+            
+
+            var cntRest = cnt2 + cnt3 + cnt4;
+            if (cntRest > 1) $("#cntRest").prepend(" | "+cntRest+" תוצאות נוספות");
+            if (cntRest == 0) $("#cntRest").prepend(" | ללא תוצאות נוספות");
+            if (cntRest == 1) $("#cntRest").prepend(" | תוצאה נוספת אחת");
+            var cntMore = cntRest
+            if (cntRest > 0) $("#cntMore").prepend(cntRest);
+            
+            var cntAll = cnt1 + cntRest;
+            if (cntAll == 0) $("#msgRsltsZeroExct").hide();
+            if (cntAll == 0) $("#msgRsltsNone").show();
+            
+            if ($("#count3").data("count") == undefined) $("#msgRsltsZeroExct").hide(); 
+            if (($("#count3").data("count") == undefined) && (cnt1 == 0)) $("#msgRsltsNoneShort").show(); 
+
+
+            // HIDES / UNHIDES LABELS LIST
+            $("#tagsTile").click(function(){
+                $("#tagsCloud").slideToggle();
+                return false;
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+
+
+<style>
+
+menu {
+  DISPLAY:NONE;
+  background:#f6f9fc;
+  border-left:1px solid #cddbea;
+  height:calc(100vh);
+  font-size:1.4em;
+  position:fixed;
+  top:0;
+  z-index:2;
+  padding:0;
+  margin:0;
+ }
+
+  menu ul {
+    display:flex;
+    flex-direction:column;
+    gap:1%;
+    height:calc(100% - 85px);
+    justify-content:space-around;
+    list-style:none;
+    margin:0;
+    padding:0 45px 45px 45px;
+    width:160px;
+  }
+
+  menu li {
+    background-color:#ffffff;
+    border-radius:10px 0;
+    text-align:center;
+    flex:1;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 1px #ccc;
+  }
+
+  menu li:hover {
+    cursor:pointer;
+    background-color:#ddd;
+  }
+
+  menu div {
+  display:flex;
+  padding:0;
+  margin:0;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+  }
+
+menu div p {
+  align-self:center;
+  flex:1;
+  margin:0;
+}
+menu li:first-child p, menu li:last-child p{
+  font-size:18px;
+  }
+@media (max-width:600px) {
+  menu {
+    width:100%;
+    padding:0;
+  }
+  menu ul {
+    width: calc(100% - 60px);
+    padding: 0 30px 40px 30px;
+    height: calc(100% - 100px); 
+     }
+
+    menu li:first-child p, menu li:last-child p{
+  font-size:1em;
+  }
+}
+
+
+
+  #bar-search-container {
+    background-color: #f6f9fc; 
+    border-bottom: 1px solid #cddbea;
+    position: sticky;
+    top:0;
+    z-index:2;
+  }
+
+  #bar {
+    padding-bottom:4px;
+    width:100%;
+  }
+
+  #bar-menu {
+    cursor: pointer;
+    flex:0 0 40px;
+  }
+
+  #bar-logo {
+    cursor: pointer;
+    flex:0 0 40px;
+    padding-left:3px;
+  }
+  
+  #bar-search {
+    flex:1;
+    height:40px;
+    margin:0 3px;
+  }
+  
+  #bar-search-flex {
+    display:flex;
+    height:40px;
+  }
+  
+  #siteTitle {
+    background: #f6f9fc;
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    font-size:large;
+    letter-spacing:0.2em;
+    padding:0.2em;
+  }
+
+  #searchBoxTop {
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    max-width:600px;
+    background: white; 
+    display: block; 
+    width: 100%; 
+    height: 94%; 
+    padding: 3px 6px; 
+    border: 1px dotted gray; 
+    font-size:1.5em;
+    margin:0 auto;
+    background-image:url(img/site/search.png);
+    background-repeat:no-repeat;
+    background-position:left;
+    background-size:24px;
+  }
+  
+  #searchBoxTop::placeholder {
+    color:#bbb;
+    padding-right:10px;
+    font-size:0.8em;
+  }
+
+  #barSearchTools {
+    DISPLAY:NONE;
+    background-color: #f6f9fc;
+    padding-top:5px;
+  }
+
+  #barSearchTeaser, .barSearchTools {
+    max-width:600px;
+    margin:0 auto;  
+    }
+
+  #barSearchTeaser {
+    font-size: large;
+  }
+
+  .barSearchTools {
+    visibility:HIDDEN;
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    grid-column-gap: 10px;
+  }
+
+#clear-input, #search-button {
+    border: 0;
+    background: NONE;
+    cursor: pointer;
+    padding:5px;
+    border-radius:5px;
+  }
+
+  #clear-input {
+    /*visibility:HIDDEN;*/
+    font-family: 'Material Icons';    
+    font-size: 20px;
+    background: #c7c7c7;
+    color: black;
+  }
+
+  #clear-input:hover {
+    background: gray;
+    color: white;
+  }
+
+  #search-button {
+    /*visibility:HIDDEN;*/
+    font-size: 30px;
+    background: #5b7a99;
+    color:white;
+  }
+
+  #search-button:hover {
+    background: #d4eaff;
+    color: #5b7a99;
+  }
+
+  /* loading animation START - this code is DUPLIC from edit.css - MERGE needed */
+  .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+  }
+  .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #82b1de transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+      0% {
+      transform: rotate(0deg);
+      }
+      100% {
+      transform: rotate(360deg);
+      }
+  }
+  /* loading animation END */  
+
+  @media only screen and (max-width:700px) {
+    .hideOnMobile {display:none;}
+  }  
+</style>
+
+<div id="siteTitle">
+<a href=".">
+  מילון ערבית מדוברת
+  </a>
+</div>
+<form id="bar-search-container" action="." autocomplete="off" onsumbit="if (!window.__cfRLUnblockHandlers) return false; loadAnim(e)" data-cf-modified-3b098d21b69736d60e45946e-="">
+  <div dir="rtl" id="bar">
+    <div id="bar-search-flex">
+      <div id="bar-menu">
+       <span class="material-icons" id="menuOpen" style="font-size: 40px; color: #5b7a99;">menu</span>
+      </div>
+      <div id="bar-search">
+        <label for="searchBoxTop" style="DISPLAY:NONE;"> </label>
+        <input id="searchBoxTop" name="searchString" type="search" value="&#1492;&#1500;&#1498;" />
+      </div>
+      <div id="bar-logo">
+        <a href=".">
+          <img style="width:100%;" src="img/site/milon-logo.png" alt="logo" />
+        </a>
+      </div>
+    </div>
+    <div id="barSearchTools">
+      <div class="barSearchTools" style="height:0;">
+        <button id="clear-input" type="button" title="ניקוי חיפוש">
+          <span class="material-icons-outlined">close</span>
+        </button>
+        <input type="submit" style="DISPLAY:NONE;">
+        <button id="search-button" title="חפשו במילון">
+          יאללה!
+        </button>
+      </div>
+      <div id="barSearchTeaser">
+        <div style="text-align:center; border:0; line-height:1.5; padding:4px;">
+            חפשו <span class="heb" style="font-size:larger; float:none;">מילה</span>, <span class="arb">כִּלְמֵה</span> <span class="or">או</span> <span class="arb">كلمة</span>
+        </div>
+      </div>
+    </div>
+    <div id="loadingAnm" style="DISPLAY:NONE; text-align:center;">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+<div id="container">
+
+    <menu>
+           <span class="material-icons" id="menuClose" style="cursor: pointer;font-size: 50px; color: #5b7a99;">close</span>
+
+      <ul>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='default.asp'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>דף הבית של המילון</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='labels.asp'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>רשימת נושאים</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='lists.all.asp'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>רשימות אישיות</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='games.mem.asp'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>משחק זיכרון</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='guide.asp'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>מדריך שימוש</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='about.asp'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>אודות המילון</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='https://madrasafree.com'" data-cf-modified-3b098d21b69736d60e45946e-=""><p>לאתר הבית של מדרסה</p></div></li>
+      </ul>
+    </menu>
+
+    <div id="nav" class="navNew" style="visibility:hidden;z-index:3;">
+        <ul>
+            <li><a href="default.asp">דף הבית של המילון</a></li>
+            <li class="hr"></li>
+            <li><a href="labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
+            <li><a href="lists.all.asp">רשימות אישיות</a></li>
+            <li><a href="games.mem.asp">משחק זיכרון</a></li>
+            <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
+            <li style="display:none;"><a href="activity.asp">פעילות קהילה</a></li>
+            <li style="display:none;"><a href="team.tasks.asp">דף משימות</a></li>
+            <li style="display:none;"><a href="test.asp">ארגז חול</a></li>
+            <li><a href="about.asp">אודות המילון</a></li>
+            <li style="display:none;"><a href="stats.asp">סטטיסטיקה</a></li>
+            <li class="hr"></li>
+            <li><a href="https://madrasafree.com">לאתר הבית של מדרסה</a></li>
+
+        </ul>
+        <span style="position:absolute; top:10px; left:0;" onclick="if (!window.__cfRLUnblockHandlers) return false; toggleMenu();" data-cf-modified-3b098d21b69736d60e45946e-=""><a href="#">x</a></span>
+    </div>
+
+    <br />
+
+    <script type="3b098d21b69736d60e45946e-text/javascript">
+
+    $(function(){
+    $("#menuOpen, #menuClose").click(function(){
+      $("menu").toggle("slow");
+      // $("#menuOpen, #menuClose").toggle();
+    });
+    });
+
+      $("#searchBoxTop").focusin(function(){
+        $("#bar-menu, #bar-logo").addClass("hideOnMobile");
+        $("#barSearchTools").slideDown();
+      });
+       $("body").on('click',function(e){
+        $("#bar-menu, #bar-logo").removeClass("hideOnMobile");
+        $("#barSearchTools").slideUp();
+      });
+      
+      $("#bar-search-container").keydown(function(e) {
+        if (e.key === "Escape" || e.key === "Esc") {
+          e.preventDefault();
+          document.activeElement.blur();
+          $("#barSearchTools").slideUp();
+        }
+        if (e.key === "Enter") {
+          var isEmpty = isInputEmpty();
+          if(isEmpty) e.preventDefault();
+        }
+      });
+      
+      $("#searchBoxTop").on("input focus",function(){
+        var isToolsVisable=false;
+        if ($(".barSearchTools").css("visibility") == "visible") isToolsVisable=true;
+        if ((!isInputEmpty()==true) && (isToolsVisable==false)) {
+            $(".barSearchTools").css({visibility:"visible",opacity:0.0}).animate({opacity:1.0});
+            $("#barSearchTeaser").css({visibility:"hidden"});
+        } else if ((isInputEmpty()==true) && (isToolsVisable==true)) {
+            $(".barSearchTools").animate({opacity:0.0},150,function(){$(".barSearchTools").css({visibility:"hidden"})});
+            $("#barSearchTeaser").css({visibility:"visible",opacity:0.0}).animate({opacity:1.0});
+        }
+      });
+
+      $("#searchBoxTop, #clear-input, #search-button").on("click",function(e){
+        e.stopPropagation(); // ignores clicking on the other elements "behind" the selected one.
+      });
+
+      $("#clear-input").on("click",function(e){
+        $("#searchBoxTop").val('').focus();
+      });
+
+      function isInputEmpty(){return $("#searchBoxTop").val().trim().length == 0;}
+
+      $("#bar-search-container").on("submit",function(e){
+          var isEmpty = isInputEmpty();
+          if(isEmpty) {
+            e.preventDefault(); //prevent the default action
+            $("#searchBoxTop").focus();
+            return false;
+          } else {
+            $("#loadingAnm").show();
+            $("#barSearchTools").hide();
+            return true;
+          }
+      });
+
+   </script>
+
+
+<div class="box">
+    <h1>מילון ערבית מדוברת</h1>
+	
+	
+<div id="msgRsltsExct" style="text-align: center;padding: 15px;background: rgb(255 255 255 / 95%);border: 1px solid #d1d9e6;margin: 0px auto;color: #1988cc;margin-bottom: 20px;font-size: 16px;font-family: 'Abraham', sans-serif;border-radius: 8px;box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);width: 90%;max-width:400px">
+  רוצים ללמוד לתקשר בערבית כמו שצריך?
+  <div style="margin-top: 15px;">
+    <a href="https://madrasafree.com?utm_source=dictionary&utm_medium=banner&utm_campaign=free_online_courses" style="padding: 6px 12px;background-color: #e6f2ff;color: #4a6f8a;border: 1px solid #b3d1ff;border-radius: 4px;text-decoration: none;cursor: pointer;margin-right: 8px;font-size: 15px;display: inline-block;">לקורסים מקוונים בחינם</a>
+    <a href="https://madrasafree.com/our-courses/zoom?utm_source=dictionary&utm_medium=banner&utm_campaign=zoom_teacher" style="padding: 6px 12px;background-color: #e6f2ff;color: #4a6f8a;border: 1px solid #b3d1ff;border-radius: 4px;text-decoration: none;cursor: pointer;font-size: 15px;display: inline-block;">לקורסים עם מורה בזום</a>
+  </div>
+</div>
+
+
+    
+    <div id="msgRsltsExct" style="DISPLAY:NONE; text-align: center; padding: 5px; background:#fff5d7b8; border-bottom: 2px solid #8286ff; margin: 0 auto; color: #8286ff;">
+        <span style="font-weight:bold;" id="cnt1"></span>
+        <span style="font-size:small;" id="cntRest"></span>
+    </div>
+
+    <div id="msgRsltsZeroExct" style="DISPLAY:NONE; text-align: center; padding: 5px; background: #fff5d7b8; border-bottom: 2px solid #ffaa82; margin: 0 auto; color: #ffaa82;">
+        <p style="font-weight:bold;">
+            אויש!
+            <br>לא מצאנו ב-ד-י-ו-ק את מה שכתבתם
+            <br>אבל כן מצאנו <span style="font-size:small;" id="cntMore"></span> תוצאות אחרות:
+        </p>
+    </div>
+
+    <div id="msgRsltsNone" style="DISPLAY:NONE; text-align: center; padding: 5px; background: #ffd7d73d; border-bottom: 2px solid #ff8282; margin: 0 auto; color: #ff8282;">
+        <p style="font-weight:bold;">
+            אופס!
+            <br>לא מצאנו את מה שחיפשתם
+        </p>
+        <ul style="text-align:right; width:max-content; margin:0 auto; padding-left:15%;"><u>טיפים</u>:
+            <li>חפשו פעלים בגוף שלישי עבר</li>
+            <li>חפשו שמות עצם בצורת יחיד</li>
+            <li>חפשו מילה אחת כל פעם</li>
+        </ul>
+        <br>
+    </div>
+    
+    <div id="msgRsltsNoneShort" style="DISPLAY:NONE; text-align: center; padding: 5px; background: #ffd7d73d; border-bottom: 2px solid #ff8282; margin: 0 auto; color: #ff8282;">
+        <p style="font-weight:bold;">
+            לא עלו תוצאות
+        </p>
+        יש מעט מאוד מילים קצרות כל כך במילון
+        <p style="padding:20px; max-width:300px; margin:0 auto; font-size:small;">
+            אם אתם בטוחים שהמילה הזו אמורה להופיע במילון, פנו אלינו כדי שנוסיף אותה - <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9888d848087a984888d9b889a888f9b8c8cc78a8684">[email&#160;protected]</a>
+        </p>
+    </div>
+    
+    
+    
+
+                <div class="exact">
+                    <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=960';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                        <div class="heb" style="position: relative;">
+                            <a href="word.asp?id=960">הָלַךְ</a>
+                            
+                            <span class="icons">
+                                <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                            </span>                    
+                        </div>
+                        <div class="arb">رَاح</div>
+                        <div class="arb">רַאח</div>
+                        <div class="eng">
+                            raah׳
+                        </div>
+                        <div class="attr">
+                            <div class="pos">פועל<span style="font-size:small;"> (בניין 1)</span>
+                            </div>     
+                            <div class="gender">זכר
+                            </div>     
+                            <div class="number">יחיד
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exact">
+                    <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=4061';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                        <div class="heb" style="position: relative;">
+                            <a href="word.asp?id=4061">הלך</a>
+                            
+                                <span class="def">(ברגל)</span>
+                            <span class="icons">
+                                <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                            </span>                    
+                        </div>
+                        <div class="arb">مشي</div>
+                        <div class="arb">מִשִי</div>
+                        <div class="eng">
+                            mi-shi
+                        </div>
+                        <div class="attr">
+                            <div class="pos">פועל<span style="font-size:small;"> (בניין 1)</span>
+                            </div>     
+                            <div class="gender">זכר
+                            </div>     
+                            <div class="number">יחיד
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exact">
+                    <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=5249';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                        <div class="heb" style="position: relative;">
+                            <a href="word.asp?id=5249">הלך</a>
+                            
+                                <span class="def">(בספרותית)</span>
+                            <span class="icons">
+                                <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                            </span>                    
+                        </div>
+                        <div class="arb">ذهب</div>
+                        <div class="arb">דַ׳הַבּ</div>
+                        <div class="eng">
+                            dha-hab
+                        </div>
+                        <div class="attr">
+                            <div class="pos">פועל<span style="font-size:small;"> (בניין 1)</span>
+                            </div>     
+                            <div class="gender">זכר
+                            </div>     
+                            <div class="number">יחיד
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+    
+    <span id="count1" data-count="3" style="display:hidden;"></span><h2 id='cnt2'>מילים שנשמעות כמו מה שחיפשתם<span style='font-size:.7em; float:left; padding-left:4px;'>HLK</span></h2>
+            <div class="soundexed">
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=617';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=617">הולך? </a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">ماشي ؟</div>
+                                <div class="arb" style="font-size:1.6em;">מַאשִי ?</div>
+                                <div class="eng">maa-shi</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=1063';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=1063">מגולח</a>
+                                        <span class="icons">
+                                        <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" />
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حالق</div>
+                                <div class="arb" style="font-size:1.6em;">חַאלֵק</div>
+                                <div class="eng">h׳aa-lek</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=1201';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=1201">סַפָּר</a>
+                                        <span class="def">(מקצוע)</span>
+                                        <span class="icons">
+                                        <img src="img/site/photo.png" alt="לערך זה יש תמונה" title="לערך זה יש תמונה" class="imgLink" />
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حَلَّاق</div>
+                                <div class="arb" style="font-size:1.6em;">חַלַّאק</div>
+                                <div class="eng">h׳al-laaq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=1747';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=1747">הוֹלֵךְ</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">رايح</div>
+                                <div class="arb" style="font-size:1.6em;">רַאיֵח</div>
+                                <div class="eng">raa-yeh׳</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=2175';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=2175">עגיל</a>
+                                        <span class="icons">
+                                        <img src="img/site/audio.png" alt="לערך זה יש סרטון או אודיו" title="לערך זה יש סרטון או אודיו" class="audio"/>
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حلق</div>
+                                <div class="arb" style="font-size:1.6em;">חַלַק</div>
+                                <div class="eng">h׳a-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3434';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=3434">חָלָק</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">مالس</div>
+                                <div class="arb" style="font-size:1.6em;">מַאלֵס</div>
+                                <div class="eng">maa-les</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3497';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=3497">גרון</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حلق</div>
+                                <div class="arb" style="font-size:1.6em;">חַלַק</div>
+                                <div class="eng">h׳a-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3707';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=3707">התגלח</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حلق</div>
+                                <div class="arb" style="font-size:1.6em;">חַלַק</div>
+                                <div class="eng">ha-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3708';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=3708">הִסְתַפֵּר</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حَلَق</div>
+                                <div class="arb" style="font-size:1.6em;">חַלַק</div>
+                                <div class="eng">ha-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=4113';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=4113">מוּסָר</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">أَخْلَاق</div>
+                                <div class="arb" style="font-size:1.6em;">אַחְ׳לַאק</div>
+                                <div class="eng">2akh-laaq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=5087';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=5087">נוֹלַד</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">خلق</div>
+                                <div class="arb" style="font-size:1.6em;">חִ׳לֵק</div>
+                                <div class="eng">khi-leq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=5675';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=5675">יְצִירָתִי</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">خلّاق</div>
+                                <div class="arb" style="font-size:1.6em;">חַ׳לַאק</div>
+                                <div class="eng">kha-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=5676';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=5676">יָצַר, בָּרָא</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">خلق</div>
+                                <div class="arb" style="font-size:1.6em;">חַ׳לַק</div>
+                                <div class="eng">kha-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=6192';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=6192">חלק</a>
+                                        <span class="def">(על דעת אחר)</span>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">اختلف</div>
+                                <div class="arb" style="font-size:1.6em;">אִחְ׳תַלַף</div>
+                                <div class="eng">2ikh-ta-laf</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=6525';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=6525">סִיפֵּר</a>
+                                        <span class="def">(עשה תספורת)</span>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">حلق</div>
+                                <div class="arb" style="font-size:1.6em;">חַלַק</div>
+                                <div class="eng">h׳a-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=6526';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=6526">חֵלֶק</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">جزء </div>
+                                <div class="arb" style="font-size:1.6em;">גֻ׳זְא</div>
+                                <div class="eng">juz2</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=7648';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=7648">בריאה, יצירה</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">خَلْق</div>
+                                <div class="arb" style="font-size:1.6em;">חַ׳לְק</div>
+                                <div class="eng">khalq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=7780';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=7780">חילק</a>
+                                        <span class="def">(לחלקים)</span>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">قسم</div>
+                                <div class="arb" style="font-size:1.6em;">קַסַם</div>
+                                <div class="eng">qa-sam</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=8073';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=8073">הולך</a>
+                                        <span class="def">(ברגל)</span>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">مَاشِي</div>
+                                <div class="arb" style="font-size:1.6em;">מַאשִי</div>
+                                <div class="eng">maa-shi</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=8419';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=8419">עכשיו</a>
+                                        <span class="def">(כמו هلقيت. נכתב גם هلا ונהגה כך)</span>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">هَلَّق</div>
+                                <div class="arb" style="font-size:1.6em;">הַלַّק</div>
+                                <div class="eng">hal-laq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=8783';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=8783">בורא</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">خالق</div>
+                                <div class="arb" style="font-size:1.6em;">חַ׳אלֵק</div>
+                                <div class="eng">khaa-leq</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=8852';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=8852">חלק</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">شَقَّة</div>
+                                <div class="arb" style="font-size:1.6em;">שַקַﬞה</div>
+                                <div class="eng">shaq-qa</div>
+                            </div>
+            </div>
+            <span id="count2" data-count="22" style="display:none;"></span><h2 id='cnt3'>מילים עם רצף האותיות שחיפשתם</h2>
+            <div class="like">
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=419';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=419">הלך עלי</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">راحت عليّ</div>
+                                <div class="arb" style="font-size:1.6em;">רַאחַת עַלַיّ</div>
+                                <div class="eng">raa-h׳at 3a-layy</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=1948';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=1948">הלך לאיבוד, איבד דרכו</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">تاه </div>
+                                <div class="arb" style="font-size:1.6em;">תַאהְ</div>
+                                <div class="eng">taah</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3375';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=3375">הלך הביתה</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">رَوَّح</div>
+                                <div class="arb" style="font-size:1.6em;">רַוַّח</div>
+                                <div class="eng">raw-wah׳</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=4804';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=4804">טִייֵּל, הִתְהַלֵּך</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">تْمَشَّى</div>
+                                <div class="arb" style="font-size:1.6em;">תְמַשַّא</div>
+                                <div class="eng">tmash-sha</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=5593';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=5593">מה קרה לך?!</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">شو صايبك</div>
+                                <div class="arb" style="font-size:1.6em;">שוּ צַאיְבַּכּ?</div>
+                                <div class="eng">shuu s׳ay-bak</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=7416';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=7416">הסתדר לו, הלך לו</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">زَبَط مَعُه</div>
+                                <div class="arb" style="font-size:1.6em;">זַבַּט מַעוֹ</div>
+                                <div class="eng">za-bat׳ ma-3o</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=8939';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=8939">עקב, הלך אחרי</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">تبع</div>
+                                <div class="arb" style="font-size:1.6em;">תַבַּע</div>
+                                <div class="eng">ta-ba3</div>
+                            </div>
+                            <div class="result" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=9009';" data-cf-modified-3b098d21b69736d60e45946e-="">
+                                <div class="heb" style="position:relative;"><a href="word.asp?id=9009">בְּמֶשֶׁךְ, בְּמַהֲלָךְ</a>
+                                        <span class="icons">
+                                            <img src="img/site/correct.png" id="ערך זה נבדק ונמצא תקין" alt="ערך זה נבדק ונמצא תקין" title="ערך זה נבדק ונמצא תקין" class="correct" />
+                                </div>
+                                <div class="arb">أَثْنَاء</div>
+                                <div class="arb" style="font-size:1.6em;">אַתְ׳נַאאְ</div>
+                                <div class="eng">2ath-naa2</div>
+                            </div>
+            </div>
+            <span id="count3" data-count="8" style="display:none;"></span><h2 id='cnt4'>תוצאות נוספות : שגיאות נפוצות, מילים נרדפות ועוד</h2>
+            <div class="searchWords">
+            </div>
+            <span id="count4" data-count="0" style="display:none;"></span>
+
+
+<!-- RESULTS FROM SENTENCES -->
+
+
+<!-- IF NOT WELCOME PAGE -->
+    <div class="notice info" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='guide.asp'" data-cf-modified-3b098d21b69736d60e45946e-="">
+        הסבר על התעתיק
+    </div>
+
+    <hr/>
+
+
+<div id="madrasa-welcome">
+    <div class="madrasa-welcome-img">
+        <a href="https://madrasafree.com" target="_blank">
+            <img src="/img/site/madrasa.png" alt="Madrasa's logo" width="120">
+        </a>
+    </div>
+
+    <div class="madrasa-welcome-text">
+       <p style="text-align:center;padding:0 20px;">
+            ברוכים הבאים לדף הבית החדש של המילון החינמי והשיתופי לערבית מדוברת
+        </p>
+    </div>
+    
+</div>
+
+<!-- TILE MENU-->
+<div id="boxMenu">
+    <div style="display:none;" id="communityTile">
+        <a href="activity.asp"><div data-gtm="tile_community">פעילות קהילה</div></a>
+    </div>
+    <div id="tagsTile">
+        <a href="#"><div data-gtm="tile_labels">רשימות נושאים</div></a>
+    </div>
+    <div>
+        <a href="lists.all.asp"><div data-gtm="tile_lists">הרשימות שלכם</div></a>
+    </div>
+    <div>
+        <a href="guide.asp"><div data-gtm="tile_guide">מדריך שימוש</div></a>
+    </div>
+    <div style="display:none;">
+        <a href="team.tasks.asp"><div data-gtm="tile_learn">דף משימות</div></a>
+    </div>
+    <div>
+        <a href="games.mem.asp"><div data-gtm="tile_games">משחק זיכרון</div></a>
+    </div>
+    <div style="display:none;">
+        <a href="test.asp"><div data-gtm="tile_links">ארגז חול</div></a>
+    </div>
+    <div style="display:none;">
+        <a href="stats.asp"><div data-gtm="tile_stats">סטטיסטיקה</div></a>
+    </div>
+    <div >
+        <a href="https://rothfarb.info/ronen/arabic/"  style="line-height:16px;" target="_blank" ><div style="background-color:#c0dbf8">
+        פורטל ערבית מדוברת
+        <img style="height:100%;opacity:1;" src="img/site/logo.png"/>
+        </div></a>
+    </div>
+</div>
+
+
+
+
+<!-- TAG CLOUD-->
+<div id="tagsCloud">
+    <ul>
+            <li style="font-size:2.2em;" title="ישנן 320 מילים בנושא זה" style="font-size:2.2em">
+                <a href="label.asp?id=5">אוכל</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 261 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=17">בבית</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 88 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=15">בגדים</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 118 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=36">ביטויים</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 85 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=33">בעלי חיים 1 - יונקים</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 41 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=39">בעלי חיים 2 - עופות</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 106 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=6">בעלי חיים 3 - כל השאר</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 107 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=4">ברכות</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 65 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=21">בשימוש בעברית</a>
+            </li>
+            <li style="font-size:1.8em;" title="ישנן 148 מילים בנושא זה" style="font-size:1.8em">
+                <a href="label.asp?id=18">גוף האדם</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 73 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=31">דקדוק</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 225 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=20">דתות וחגים</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 189 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=7">זמן</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 53 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=28">חומרים</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 92 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=24">חינוך</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 99 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=38">טכנולוגיה ומחשבים</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 37 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=34">ירקות</a>
+            </li>
+            <li style="font-size:1.2em;" title="ישנן 30 מילים בנושא זה" style="font-size:1.2em">
+                <a href="label.asp?id=37">כלי עבודה</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 182 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=16">כלכלה</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 78 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=23">מדע</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 55 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=32">מוסיקה</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 80 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=14">מזג אוויר</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 72 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=1">מספרים</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 48 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=29">מקומות 1 - מדינות</a>
+            </li>
+            <li style="font-size:1.2em;" title="ישנן 28 מילים בנושא זה" style="font-size:1.2em">
+                <a href="label.asp?id=30">מקומות 2 - ערים</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 244 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=3">מקומות 3 - כל השאר</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 225 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=9">מקצועות</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 107 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=8">משפחה</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 119 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=13">ספורט</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 194 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=11">פוליטיקה</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 59 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=35">פירות</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 188 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=12">צבא וביטחון</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 47 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=2">צבעים</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 64 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=19">צמחים</a>
+            </li>
+            <li style="font-size:2em;" title="ישנן 220 מילים בנושא זה" style="font-size:2em">
+                <a href="label.asp?id=22">רפואה</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 55 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=10">שאלות</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 54 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=25">שמות פרטיים</a>
+            </li>
+            <li style="font-size:1.6em;" title="ישנן 117 מילים בנושא זה" style="font-size:1.6em">
+                <a href="label.asp?id=26">תחבורה</a>
+            </li>
+            <li style="font-size:1.4em;" title="ישנן 68 מילים בנושא זה" style="font-size:1.4em">
+                <a href="label.asp?id=27">תקשורת</a>
+            </li>
+    </ul>
+</div>
+
+
+
+
+<!-- IF WELCOME PAGE -->
+
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="3b098d21b69736d60e45946e-text/javascript">
+    $("#searchSubmit").on("submit",function(){
+        $("#loadingAnm").show();
+        return true;
+    });
+</script>
+
+
+</div>
+
+<div id="showTime" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='clock.asp';" style="cursor:pointer;" data-cf-modified-3b098d21b69736d60e45946e-="">
+    <span id="clock" dir="LTR">
+        <span id="HH"></span><span id="MM"></span>
+    </span>
+    <span id="taatiklock"></span>
+</div>
+
+
+<!--these br's are needed cause the trailer hides the bottom part of the page-->
+<br><br><br>
+    <table class="footer">
+        <tr>
+            <td>
+                <div style="padding:5px 8px; text-align:left;">
+
+                    <div style="display:inline-block;">
+                        <a href="users.landingPage.asp"><img src="team/img/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+	
+	<script type="3b098d21b69736d60e45946e-text/javascript">
+        function toggleTable() {
+        var lTable = document.getElementById("inFooter");
+        lTable.style.display = (lTable.style.display == "table") ? "none" : "table";
+        }
+
+        function toggleSearch() {
+        var srch = document.getElementById("topSearch");
+        srch.style.display = (srch.style.display == "inline-block") ? "none" : "inline-block";
+        }	
+    
+        function toggleMenu() {
+        var lMenu = document.getElementById("nav");
+        lMenu.style.display = (lMenu.style.display == "table") ? "none" : "table";
+        }	
+        
+        $(".clear-input").on("click", function(){
+            $("#searchBoxTop").val("").focus();
+        });
+
+        $("#topSearch").on("submit",function(){
+            if($("#searchBoxTop").val().trim() == ""){
+                return false;
+            }
+            $("#submitTop").prop("disabled",true);
+            $("#loadingAnmTop").show().attr("float","left");
+            return true;
+        });
+
+    </script>
+
+    <script src="inc/functions/saa3a.js?v=3" type="3b098d21b69736d60e45946e-text/javascript"></script>
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="3b098d21b69736d60e45946e-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"974a62b93f456a35","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"c751259900e04e929b7f2c95c98e6077"}' crossorigin="anonymous"></script>
+</body>
+</html>

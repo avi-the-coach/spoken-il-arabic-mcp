@@ -80,6 +80,62 @@ export interface SimilarRoot {
 export type SearchType = 'auto' | 'hebrew' | 'arabic';
 export type SimilarityType = 'pattern' | 'meaning' | 'phonetic';
 
+// Dictionary API Types
+export interface DictionaryWordMatch {
+  id: number;                    // Unique word ID for detailed lookup
+  hebrew: string;                // Hebrew text
+  arabic: string;                // Arabic text
+  transliteration?: string;      // Hebrew transliteration
+  phonetic?: string;             // English phonetic
+  word_type?: string;            // noun, verb, adjective, etc.
+  gender?: string;               // masculine, feminine
+  number?: string;               // singular, plural
+  has_audio?: boolean;           // Audio available indicator
+  has_image?: boolean;           // Image available indicator
+  verified?: boolean;            // Verified entry indicator
+}
+
+export interface DictionarySearchResponse {
+  query: string;                         // Original search term
+  total_results: number;                 // Total number of matches found
+  exact_matches: DictionaryWordMatch[];  // Perfect matches
+  soundex_matches: DictionaryWordMatch[]; // Phonetically similar
+  additional_matches: DictionaryWordMatch[]; // Contains search term
+}
+
+export interface DictionaryExample {
+  arabic: string;               // Example sentence in Arabic
+  hebrew: string;               // Example sentence in Hebrew  
+  transliteration?: string;     // Arabic transliteration
+  context?: string;             // Usage context
+}
+
+export interface RelatedWord {
+  id: number;
+  hebrew: string;
+  arabic: string;
+  transliteration?: string;
+  relationship: string;         // synonym, antonym, related, etc.
+}
+
+export interface DictionaryWordDetails {
+  id: number;
+  hebrew: string;               // Primary Hebrew translation
+  arabic: string;               // Primary Arabic word
+  transliteration: string;      // Hebrew transliteration
+  phonetic?: string;            // English phonetic pronunciation
+  word_type: string;            // Part of speech
+  gender?: string;              // Grammatical gender
+  number?: string;              // Singular/plural
+  category?: string;            // Semantic category (בבית, etc.)
+  definitions: string[];        // Multiple definitions/meanings
+  examples: DictionaryExample[]; // Usage examples
+  related_words: RelatedWord[];  // Synonyms, antonyms, related terms
+  has_audio: boolean;
+  has_image: boolean;
+  verified: boolean;
+}
+
 // Error types
 export interface ApiError {
   message: string;

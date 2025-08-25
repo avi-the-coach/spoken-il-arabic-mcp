@@ -11,6 +11,8 @@ import { RoadToRecoveryApiClient } from './api/client.js';
 import { SearchTool } from './tools/search.js';
 import { ConjugationTool } from './tools/conjugate.js';
 import { SimilarRootsTool } from './tools/similar.js';
+import { searchDictionaryTool, handleSearchDictionary } from './tools/dictionarySearch.js';
+import { getDictionaryWordTool, handleGetDictionaryWord } from './tools/dictionaryWord.js';
 import { ValidationError } from './utils/validator.js';
 
 export class SpokenArabicMCPServer {
@@ -48,8 +50,8 @@ export class SpokenArabicMCPServer {
       return {
         tools: [
           {
-            name: 'search_arabic_roots',
-            description: 'Search for Arabic Palestinian roots by Hebrew meaning, Arabic transliteration, or root pattern',
+            name: 'search_arabic_verbs',
+            description: 'Search for Arabic Palestinian verb roots and their conjugations by Hebrew meaning, Arabic transliteration, or root pattern',
             inputSchema: {
               type: 'object',
               properties: {
@@ -129,6 +131,8 @@ export class SpokenArabicMCPServer {
               required: ['root_id', 'similarity_type'],
             },
           },
+          searchDictionaryTool,
+          getDictionaryWordTool,
         ],
       };
     });
@@ -139,14 +143,21 @@ export class SpokenArabicMCPServer {
         const { name, arguments: args } = request.params;
 
         switch (name) {
-          case 'search_arabic_roots':
-            return await this.handleSearchArabicRoots(args);
+          case 'search_arabic_verbs':
+          case 'search_arabic_roots': // Backward compatibility
+            return await this.handleSearchArabicVerbs(args);
 
           case 'get_root_conjugation':
             return await this.handleGetRootConjugation(args);
 
           case 'get_similar_roots':
             return await this.handleGetSimilarRoots(args);
+
+          case 'search_arabic_dictionary':
+            return await this.handleSearchDictionary(args);
+
+          case 'get_dictionary_word':
+            return await this.handleGetDictionaryWord(args);
 
           default:
             throw new McpError(
@@ -168,7 +179,7 @@ export class SpokenArabicMCPServer {
     });
   }
 
-  private async handleSearchArabicRoots(args: any) {
+  private async handleSearchArabicVerbs(args: any) {
     const { search_term, search_type = 'auto', limit = 10 } = args;
     
     const results = await this.searchTool.searchArabicRoots(search_term, search_type, limit);
@@ -221,6 +232,32 @@ export class SpokenArabicMCPServer {
         {
           type: 'text',
           text: JSON.stringify({ similarRoots }, null, 2),
+        },
+      ],
+    };
+  }
+
+  private async handleSearchDictionary(args: any) {
+    const searchResults = await handleSearchDictionary(args);
+    
+    return {
+      content: [
+        {
+          type: 'text',
+          text: JSON.stringify(searchResults, null, 2),
+        },
+      ],
+    };
+  }
+
+  private async handleGetDictionaryWord(args: any) {
+    const wordDetails = await handleGetDictionaryWord(args);
+    
+    return {
+      content: [
+        {
+          type: 'text',
+          text: JSON.stringify(wordDetails, null, 2),
         },
       ],
     };

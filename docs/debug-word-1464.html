@@ -1,0 +1,881 @@
+
+<!-- Language="VBScript" CodePage="65001"-->
+<!-- Language="VBScript" CodePage="1255"-->
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    
+    <meta property="og:image" content="img/site/logo.jpg" />
+    
+
+	<meta charset="UTF-8">
+    <meta property="og:site_name" content="מילון ערבית מדוברת"/>
+    <meta property="fb:app_id" content="1067216663704512" />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:locale:alternate" content="ar_JO" />
+    <meta property="og:locale:alternate" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/nav.css" />
+	<link rel="stylesheet" href="css/arabic_constant.css?v=2" />
+	<link rel="stylesheet" href="css/arabic_upto499wide.css" media="(max-width:499px)" />
+    <link rel="stylesheet" href="css/arabic_from500wide.css" media="(min-width:500px)" />
+	<link rel="stylesheet" href="css/arabic_upto499high.css" media="(max-height:499px)" />
+    <link rel="stylesheet" href="css/arabic_from500high.css" media="(min-height:500px)" />
+	<link rel="shortcut icon" href="img/site/favicon.ico" />
+    <link rel="image_src" href="img/site/logo.jpg" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="ebae0b6df9b4975d130e9458-text/javascript"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KCSSVHC9Z" type="ebae0b6df9b4975d130e9458-text/javascript"></script>
+    <script type="ebae0b6df9b4975d130e9458-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3KCSSVHC9Z');
+    </script>
+
+    <title>שולחן - איך אומרים בערבית</title>
+    <meta property="og:title" content="שולחן - איך אומרים בערבית" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="team/inc/arabicTeam.css" />
+	<style>
+        h1 {
+            opacity: 0.6;
+            text-align: center;
+            font-weight: 100;
+            font-style: italic;
+            margin-bottom: 3px;
+            font-size: 1em;
+        }
+
+        h2 {
+            background-color: #8cc3fd;
+            font-weight: 100;
+            padding: 4px;
+            max-width: 450px;
+            margin: 0 auto 8px auto;
+            color: white;
+            letter-spacing: 0.2em;
+        }
+
+        h2 a:link,h2 a:visited {color:white;}
+
+        fieldset {
+            background-color:#ffffff90;
+            border-color:#c0c0c0;
+            border-style:dashed;
+            border-width:1px 0;
+            margin:0 auto 6px auto;
+            padding:0;
+            width:95%;
+            }
+
+        #container {
+            margin-top:15px;
+        }
+
+        legend {
+            background: #8cc3fd36;
+            border:1px dotted #bbb;
+            padding: 0 12px;
+            text-align: center;
+            }
+
+
+        .hebDef {font-size:small; line-height: 15px; margin-bottom:2px;}
+
+        .playAudio {
+            font-size:50px;
+            cursor:pointer;
+        }
+
+		.disabled { background-color: rgba(238, 238, 238, 0.87); border-radius:15px; cursor:initial;}
+        .sentence:not(:last-child) {
+            border-bottom:dotted 2px #8cc3fd;
+        }
+		#toolsClick,#historyClick { cursor:pointer;}
+		#toolsTable { display:block; margin-top:20px; background-color:rgba(225, 226, 144, 0.36); padding:8px 10px 10px 0px;}
+		#toolsTable > div {display:inline-block; width:100px; height:100px; border: 1px solid rgba(174, 120, 78, 1); margin: 5px 5px; border-radius: 15px; text-align: center; vertical-align: middle; background-color: white; box-shadow: 2px 2px 5px rgba(174, 120, 78, 0.66); color: rgb(174, 120, 78);}
+		#toolsTable > div:hover:not(.disabled) {background-color: rgb(255, 239, 208); box-shadow: 2px 2px 15px #999; cursor:pointer;}
+		#toolsTable p {display:table-cell; width:100px; height:100px; vertical-align:middle; padding:0 5px; font-size:small;}
+		#toolsTable img {opacity: 0.7;}
+		.disabled img {opacity: 0.3 !important;}
+        #reportErr { display:none;padding:8px 10px 10px 0px;}
+        .h2 {
+            max-width: 450px;
+            border: solid 2px #8cc3fd;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .eng {padding-left: 2px;}
+        .heb {padding-bottom: 4px; padding-right: 2px;}
+        .heb a:link,.heb a:visited {color:#1988cc !important;}
+
+        @media (min-width:1000px) {
+
+            .flex-container {
+                display:flex;
+                border:0px solid black;
+                justify-content: center;
+            }
+
+            .sctRight,.sctLeft {
+                /* flex: 0; */
+                max-width:500px;
+                padding-right:15px;
+            }
+
+        }
+
+    
+
+        @media (max-width:610px) {
+            .eng,.heb {float:none;}
+        }        
+
+        @media (min-width:610px) {
+            .exact .result {font-size: 2em;}
+        }   
+
+	</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="ebae0b6df9b4975d130e9458-text/javascript"></script>
+	<script type="ebae0b6df9b4975d130e9458-text/javascript">
+        $(document).ready(function(){
+            $("#reportErr").hide();
+            $("#toolsClick").click(function(){
+                $("#reportErr").hide();
+            });
+            $("#errBtn").click(function(){
+                $("#reportErr").slideToggle();
+            });
+            $("#back").click(function(){
+                $("#reportErr").hide();
+            });
+
+            $("#myLists").change(function(){
+                window.location = "listsWord.insert.asp?wordID="+1464+"&listID="+$(this).val();
+            });
+        });
+
+        // $(window).on('load', function() {
+        //     if ( $.trim($(".sctLeft").html()) ) {
+        //         $('.sctLeft').css("flex","1");
+        //         $('.sctRight').css("flex","1");
+
+        //         // $('.sctLeft').css({
+        //         //     // "background-color":"#8cc3fd13",
+        //         //     // "border":"1px solid #8cc3fd"
+        //         // });
+        //     }
+        // });
+
+    </script>
+</head>
+<body>
+
+
+<style>
+
+menu {
+  DISPLAY:NONE;
+  background:#f6f9fc;
+  border-left:1px solid #cddbea;
+  height:calc(100vh);
+  font-size:1.4em;
+  position:fixed;
+  top:0;
+  z-index:2;
+  padding:0;
+  margin:0;
+ }
+
+  menu ul {
+    display:flex;
+    flex-direction:column;
+    gap:1%;
+    height:calc(100% - 85px);
+    justify-content:space-around;
+    list-style:none;
+    margin:0;
+    padding:0 45px 45px 45px;
+    width:160px;
+  }
+
+  menu li {
+    background-color:#ffffff;
+    border-radius:10px 0;
+    text-align:center;
+    flex:1;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 1px #ccc;
+  }
+
+  menu li:hover {
+    cursor:pointer;
+    background-color:#ddd;
+  }
+
+  menu div {
+  display:flex;
+  padding:0;
+  margin:0;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+  }
+
+menu div p {
+  align-self:center;
+  flex:1;
+  margin:0;
+}
+menu li:first-child p, menu li:last-child p{
+  font-size:18px;
+  }
+@media (max-width:600px) {
+  menu {
+    width:100%;
+    padding:0;
+  }
+  menu ul {
+    width: calc(100% - 60px);
+    padding: 0 30px 40px 30px;
+    height: calc(100% - 100px); 
+     }
+
+    menu li:first-child p, menu li:last-child p{
+  font-size:1em;
+  }
+}
+
+
+
+  #bar-search-container {
+    background-color: #f6f9fc; 
+    border-bottom: 1px solid #cddbea;
+    position: sticky;
+    top:0;
+    z-index:2;
+  }
+
+  #bar {
+    padding-bottom:4px;
+    width:100%;
+  }
+
+  #bar-menu {
+    cursor: pointer;
+    flex:0 0 40px;
+  }
+
+  #bar-logo {
+    cursor: pointer;
+    flex:0 0 40px;
+    padding-left:3px;
+  }
+  
+  #bar-search {
+    flex:1;
+    height:40px;
+    margin:0 3px;
+  }
+  
+  #bar-search-flex {
+    display:flex;
+    height:40px;
+  }
+  
+  #siteTitle {
+    background: #f6f9fc;
+    display:flex; 
+    align-items:center; 
+    justify-content:center; 
+    font-size:large;
+    letter-spacing:0.2em;
+    padding:0.2em;
+  }
+
+  #searchBoxTop {
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    max-width:600px;
+    background: white; 
+    display: block; 
+    width: 100%; 
+    height: 94%; 
+    padding: 3px 6px; 
+    border: 1px dotted gray; 
+    font-size:1.5em;
+    margin:0 auto;
+    background-image:url(img/site/search.png);
+    background-repeat:no-repeat;
+    background-position:left;
+    background-size:24px;
+  }
+  
+  #searchBoxTop::placeholder {
+    color:#bbb;
+    padding-right:10px;
+    font-size:0.8em;
+  }
+
+  #barSearchTools {
+    DISPLAY:NONE;
+    background-color: #f6f9fc;
+    padding-top:5px;
+  }
+
+  #barSearchTeaser, .barSearchTools {
+    max-width:600px;
+    margin:0 auto;  
+    }
+
+  #barSearchTeaser {
+    font-size: large;
+  }
+
+  .barSearchTools {
+    visibility:HIDDEN;
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    grid-column-gap: 10px;
+  }
+
+#clear-input, #search-button {
+    border: 0;
+    background: NONE;
+    cursor: pointer;
+    padding:5px;
+    border-radius:5px;
+  }
+
+  #clear-input {
+    /*visibility:HIDDEN;*/
+    font-family: 'Material Icons';    
+    font-size: 20px;
+    background: #c7c7c7;
+    color: black;
+  }
+
+  #clear-input:hover {
+    background: gray;
+    color: white;
+  }
+
+  #search-button {
+    /*visibility:HIDDEN;*/
+    font-size: 30px;
+    background: #5b7a99;
+    color:white;
+  }
+
+  #search-button:hover {
+    background: #d4eaff;
+    color: #5b7a99;
+  }
+
+  /* loading animation START - this code is DUPLIC from edit.css - MERGE needed */
+  .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+  }
+  .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #82b1de transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+      0% {
+      transform: rotate(0deg);
+      }
+      100% {
+      transform: rotate(360deg);
+      }
+  }
+  /* loading animation END */  
+
+  @media only screen and (max-width:700px) {
+    .hideOnMobile {display:none;}
+  }  
+</style>
+
+<div id="siteTitle">
+<a href=".">
+  מילון ערבית מדוברת
+  </a>
+</div>
+<form id="bar-search-container" action="." autocomplete="off" onsumbit="if (!window.__cfRLUnblockHandlers) return false; loadAnim(e)" data-cf-modified-ebae0b6df9b4975d130e9458-="">
+  <div dir="rtl" id="bar">
+    <div id="bar-search-flex">
+      <div id="bar-menu">
+       <span class="material-icons" id="menuOpen" style="font-size: 40px; color: #5b7a99;">menu</span>
+      </div>
+      <div id="bar-search">
+        <label for="searchBoxTop" style="DISPLAY:NONE;"> </label>
+        <input id="searchBoxTop" name="searchString" type="search" value="" />
+      </div>
+      <div id="bar-logo">
+        <a href=".">
+          <img style="width:100%;" src="img/site/milon-logo.png" alt="logo" />
+        </a>
+      </div>
+    </div>
+    <div id="barSearchTools">
+      <div class="barSearchTools" style="height:0;">
+        <button id="clear-input" type="button" title="ניקוי חיפוש">
+          <span class="material-icons-outlined">close</span>
+        </button>
+        <input type="submit" style="DISPLAY:NONE;">
+        <button id="search-button" title="חפשו במילון">
+          יאללה!
+        </button>
+      </div>
+      <div id="barSearchTeaser">
+        <div style="text-align:center; border:0; line-height:1.5; padding:4px;">
+            חפשו <span class="heb" style="font-size:larger; float:none;">מילה</span>, <span class="arb">כִּלְמֵה</span> <span class="or">או</span> <span class="arb">كلمة</span>
+        </div>
+      </div>
+    </div>
+    <div id="loadingAnm" style="DISPLAY:NONE; text-align:center;">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+<div id="container">
+
+    <menu>
+           <span class="material-icons" id="menuClose" style="cursor: pointer;font-size: 50px; color: #5b7a99;">close</span>
+
+      <ul>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='default.asp'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>דף הבית של המילון</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='labels.asp'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>רשימת נושאים</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='lists.all.asp'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>רשימות אישיות</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='games.mem.asp'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>משחק זיכרון</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='guide.asp'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>מדריך שימוש</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='about.asp'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>אודות המילון</p></div></li>
+        <li><div onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='https://madrasafree.com'" data-cf-modified-ebae0b6df9b4975d130e9458-=""><p>לאתר הבית של מדרסה</p></div></li>
+      </ul>
+    </menu>
+
+    <div id="nav" class="navNew" style="visibility:hidden;z-index:3;">
+        <ul>
+            <li><a href="default.asp">דף הבית של המילון</a></li>
+            <li class="hr"></li>
+            <li><a href="labels.asp">רשימות נושאים<span style="font-size:80%;"></span></a></li>
+            <li><a href="lists.all.asp">רשימות אישיות</a></li>
+            <li><a href="games.mem.asp">משחק זיכרון</a></li>
+            <li><a href="guide.asp">מדריך שימוש <span style="font-size:80%;"></span></a></li>
+            <li style="display:none;"><a href="activity.asp">פעילות קהילה</a></li>
+            <li style="display:none;"><a href="team.tasks.asp">דף משימות</a></li>
+            <li style="display:none;"><a href="test.asp">ארגז חול</a></li>
+            <li><a href="about.asp">אודות המילון</a></li>
+            <li style="display:none;"><a href="stats.asp">סטטיסטיקה</a></li>
+            <li class="hr"></li>
+            <li><a href="https://madrasafree.com">לאתר הבית של מדרסה</a></li>
+
+        </ul>
+        <span style="position:absolute; top:10px; left:0;" onclick="if (!window.__cfRLUnblockHandlers) return false; toggleMenu();" data-cf-modified-ebae0b6df9b4975d130e9458-=""><a href="#">x</a></span>
+    </div>
+
+    <br />
+
+    <script type="ebae0b6df9b4975d130e9458-text/javascript">
+
+    $(function(){
+    $("#menuOpen, #menuClose").click(function(){
+      $("menu").toggle("slow");
+      // $("#menuOpen, #menuClose").toggle();
+    });
+    });
+
+      $("#searchBoxTop").focusin(function(){
+        $("#bar-menu, #bar-logo").addClass("hideOnMobile");
+        $("#barSearchTools").slideDown();
+      });
+       $("body").on('click',function(e){
+        $("#bar-menu, #bar-logo").removeClass("hideOnMobile");
+        $("#barSearchTools").slideUp();
+      });
+      
+      $("#bar-search-container").keydown(function(e) {
+        if (e.key === "Escape" || e.key === "Esc") {
+          e.preventDefault();
+          document.activeElement.blur();
+          $("#barSearchTools").slideUp();
+        }
+        if (e.key === "Enter") {
+          var isEmpty = isInputEmpty();
+          if(isEmpty) e.preventDefault();
+        }
+      });
+      
+      $("#searchBoxTop").on("input focus",function(){
+        var isToolsVisable=false;
+        if ($(".barSearchTools").css("visibility") == "visible") isToolsVisable=true;
+        if ((!isInputEmpty()==true) && (isToolsVisable==false)) {
+            $(".barSearchTools").css({visibility:"visible",opacity:0.0}).animate({opacity:1.0});
+            $("#barSearchTeaser").css({visibility:"hidden"});
+        } else if ((isInputEmpty()==true) && (isToolsVisable==true)) {
+            $(".barSearchTools").animate({opacity:0.0},150,function(){$(".barSearchTools").css({visibility:"hidden"})});
+            $("#barSearchTeaser").css({visibility:"visible",opacity:0.0}).animate({opacity:1.0});
+        }
+      });
+
+      $("#searchBoxTop, #clear-input, #search-button").on("click",function(e){
+        e.stopPropagation(); // ignores clicking on the other elements "behind" the selected one.
+      });
+
+      $("#clear-input").on("click",function(e){
+        $("#searchBoxTop").val('').focus();
+      });
+
+      function isInputEmpty(){return $("#searchBoxTop").val().trim().length == 0;}
+
+      $("#bar-search-container").on("submit",function(e){
+          var isEmpty = isInputEmpty();
+          if(isEmpty) {
+            e.preventDefault(); //prevent the default action
+            $("#searchBoxTop").focus();
+            return false;
+          } else {
+            $("#loadingAnm").show();
+            $("#barSearchTools").hide();
+            return true;
+          }
+      });
+
+   </script>
+
+
+<main class="flex-container">
+    <section class="sctRight">
+
+        <!-- STATUS -->
+                <div class="tableH" style="color:#00800075;">
+                    ✓ - ערך זה נבדק ונמצא תקין
+                </div>
+
+
+        <!-- WORD -->
+        <div class="table exact" style="margin-bottom:10px;">
+            <div class="result" style="box-shadow:rgba(0,0,0,0.45) 2px 2px 22px -3px; margin-bottom:20px; font-size:150%; cursor:initial;">
+                <div title="המילה בעברית" class="heb">שולחן
+                </div>
+                <div class="arb">
+                        <div title="המילה בערבית">طَاوْلِة</div>
+                    <span title="ערבית בתעתיק עברי">טַאוְלֵה</span>
+                </div>
+                <div title="ערבית בתעתיק לועזי" class="eng">
+                    taaw-le
+                </div>
+                <div class="attr">
+                    <div class="pos" title="חלק דיבר">שם עצם
+                    </div>     
+                    <div class="gender" title="מין">נקבה
+                    </div>     
+                    <div class="number" title="מספר">יחיד
+                    </div>     
+                </div>
+            </div>
+        </div>
+
+        <!-- LABELS -->
+            <div class="table" style="max-width:450px; margin: 0 auto 15px auto;">
+                <a href="label.asp?id=17"><span class="label">בבית</span></a> 
+            </div>
+
+        <!-- INFO -->
+
+        <!--RELATIONS BETWEEN WORDS // START-->
+                <div class="table h2">
+                    <h2><a href="TEST.RELATIONS.ASP">קשרים בין מילים</a></h2>
+                        <fieldset>
+                                        <legend>ראו גם :</legend>
+                                    <!--MAKE classes work with links-->
+                                    <div style="line-height:15px; border-radius:7px; margin:3px;" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3144';" data-cf-modified-ebae0b6df9b4975d130e9458-="">
+                                        <div class="heb" style="padding-bottom:0;">
+                                            שׁוּלְחָן
+                                                <span class="hebDef">(אוכל)</span>
+                                        </div>
+                                        <div class="arb">
+                                            سفرة
+                                        </div>
+                                        <div class="arb" style="margin-top:12px; font-size:1.6em;">
+                                            סֻפְרַה
+                                        </div>
+                                        <div class="eng" style="padding:9px 0 0 0;">
+                                            suf-ra
+                                        </div>
+                                    </div>
+                        </fieldset>
+                        <fieldset>
+                                    <!--MAKE classes work with links-->
+                                    <div style="line-height:15px; border-radius:7px; margin:3px;" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=3145';" data-cf-modified-ebae0b6df9b4975d130e9458-="">
+                                        <div class="heb" style="padding-bottom:0;">
+                                            שולחן כתיבה
+                                        </div>
+                                        <div class="arb">
+                                            مكتبة
+                                        </div>
+                                        <div class="arb" style="margin-top:12px; font-size:1.6em;">
+                                            מַכְּתַבֵּה
+                                        </div>
+                                        <div class="eng" style="padding:9px 0 0 0;">
+                                            mak-ta-be
+                                        </div>
+                                    </div>
+                        </fieldset>
+                        <fieldset>
+                                            <legend>צורת הרבים</legend>
+                                    <!--MAKE classes work with links-->
+                                    <div style="line-height:15px; border-radius:7px; margin:3px;" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=564';" data-cf-modified-ebae0b6df9b4975d130e9458-="">
+                                        <div class="heb" style="padding-bottom:0;">
+                                            שולחנות
+                                        </div>
+                                        <div class="arb">
+                                            طاولات
+                                        </div>
+                                        <div class="arb" style="margin-top:12px; font-size:1.6em;">
+                                            טַאוְלַאת
+                                        </div>
+                                        <div class="eng" style="padding:9px 0 0 0;">
+                                            taaw-laat
+                                        </div>
+                                    </div>
+                        </fieldset>
+                        <fieldset>
+                                        <legend>משמעויות נוספות בעברית למילה
+                                            <br/>טַאוְלֵה
+                                        </legend>
+                                    <!--MAKE classes work with links-->
+                                    <div style="line-height:15px; border-radius:7px; margin:3px;" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.asp?id=4336';" data-cf-modified-ebae0b6df9b4975d130e9458-="">
+                                        <div class="heb" style="padding-bottom:0;">
+                                            שש בש
+                                        </div>
+                                        <div class="arb">
+                                            طاولة
+                                        </div>
+                                        <div class="arb" style="margin-top:12px; font-size:1.6em;">
+                                            טַאוְלֵה
+                                        </div>
+                                        <div class="eng" style="padding:9px 0 0 0;">
+                                            taaw-le
+                                        </div>
+                                    </div>
+                        </fieldset>
+                    </div>
+
+            <!-- RELATIONS BETWEEN WORDS // END -->
+
+
+        <!-- DISPLAY LISTS -->
+        <div id="lists" class="table h2" style="max-width:450px; line-height:25px;">
+            <h2><a href="lists.asp">רשימות אישיות</a></h2>
+                <ul>
+                    <li>
+                        <a href="lists.asp?id=26">מילים לא ערביות</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=32">זכר נקבה הפוכים</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=40">חפצים שיש בבית</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=264">ערבית מדוברת קתדרה רחובות</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=292">גיל</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=294">ערבית יום רביעי</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=334">שיעור9</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=375">יוגב 2</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=365">רשימה 2</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=463">1000 מילים ראשונות [2]</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=484">אוצר המילים של שני</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=472">שמות עצם</a>
+                    </li>
+                    <li>
+                        <a href="lists.asp?id=530">שמות עצם</a>
+                    </li>
+                </ul>
+                <div style="font-size:small; padding:4px;">על מנת לעדכן רשימות, יש <a href="login.asp?returnTo=word.asp?id=1464">להתחבר</a></div>
+            
+        </div>
+        
+
+
+
+
+
+    </section>
+    <section class="sctLeft">
+
+        
+<!-- SENTENCES -->        
+            <div class="table h2">
+                <h2><a href="sentences.asp">משפטים לדוגמא</a></h2>
+                    <div class="sentence">
+                        <div class="heb" style="margin-bottom:10px;">
+                            <a href="sentence.asp?sID=53">השולחן בצבע חום</a>
+                        </div>
+                        <div class="arb" style="padding:0;margin-bottom:10px;line-height:2;">
+                                        <span class="normal highlight"><a href="word.asp?id=1464">الطاولة</a></span> 
+                                        <span class="normal"><a href="word.asp?id=521">لونها</a></span> 
+                                        <span class="normal"><a href="word.asp?id=2006">بني</a></span> 
+                        </div>
+                        <div class="arb" style="padding-top:5px;">אִ(ל)טַّאוְלֵה לוֹנְהַא בֻּנִّי</div>
+                        
+                    </div>
+                    <div class="sentence">
+                        <div class="heb" style="margin-bottom:10px;">
+                            <a href="sentence.asp?sID=65">שמתי את הכוסות על השולחן</a>
+                        </div>
+                        <div class="arb" style="padding:0;margin-bottom:10px;line-height:2;">
+                                        <span class="normal"><a href="word.asp?id=61">حطّيت</a></span> 
+                                        <span class="normal"><a href="word.asp?id=1274">الكاسات</a></span> على 
+                                        <span class="normal highlight"><a href="word.asp?id=1464">الطاولة</a></span> 
+                        </div>
+                        <div class="arb" style="padding-top:5px;">חַטֵّית אִלְכַּאסַאת עַלַא (אל)טַّאוְלֵה</div>
+                        
+                    </div>
+                    <div class="sentence">
+                        <div class="heb" style="margin-bottom:10px;">
+                            <a href="sentence.asp?sID=85">שמתי את הספר על השולחן</a>
+                        </div>
+                        <div class="arb" style="padding:0;margin-bottom:10px;line-height:2;">
+                                        <span class="normal"><a href="word.asp?id=61">حطّيت</a></span> 
+                                        <span class="normal"><a href="word.asp?id=1200">الكتاب</a></span> ع 
+                                        <span class="normal highlight"><a href="word.asp?id=1464">الطاولة</a></span> 
+                        </div>
+                        <div class="arb" style="padding-top:5px;">חַטֵّית (א)לִכְּתַאבּ עַ-(אל)טַّאוְלֵה</div>
+                        
+                    </div>
+            </div>
+
+    </section>
+</main>
+
+<!-- EDITORS AREA -->
+
+
+
+<hr style="border:0; height:1px; background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0));">
+<br>
+<!-- ID -->    
+<h1>איך אומרים שולחן בערבית?</h1>
+<div class="table" style="font-size:small; opacity:.6; text-align:center;">
+    מס"ד: 1464 | אינדקס קולי: JLHN, TLH
+</div>
+
+
+<!-- EDIT HISTORY -->    
+<div class="table" style="margin:10px auto; text-align:center;">
+    <span onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.edit.asp?id=1464'" role="button" id="toolsClick" data-cf-modified-ebae0b6df9b4975d130e9458-="">עריכה</span> | <span onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='word.history.asp?id=1464'" role="button" id="historyClick" data-cf-modified-ebae0b6df9b4975d130e9458-=""> היסטוריה </span>
+</div>
+
+
+</div>
+
+<div id="showTime" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='clock.asp';" style="cursor:pointer;" data-cf-modified-ebae0b6df9b4975d130e9458-="">
+    <span id="clock" dir="LTR">
+        <span id="HH"></span><span id="MM"></span>
+    </span>
+    <span id="taatiklock"></span>
+</div>
+
+
+<!--these br's are needed cause the trailer hides the bottom part of the page-->
+<br><br><br>
+    <table class="footer">
+        <tr>
+            <td>
+                <div style="padding:5px 8px; text-align:left;">
+
+                    <div style="display:inline-block;">
+                        <a href="users.landingPage.asp"><img src="team/img/teamLogo.png" style="width:24px;" alt="התחברו למילון" title="התחברו למילון" /></a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+	
+	<script type="ebae0b6df9b4975d130e9458-text/javascript">
+        function toggleTable() {
+        var lTable = document.getElementById("inFooter");
+        lTable.style.display = (lTable.style.display == "table") ? "none" : "table";
+        }
+
+        function toggleSearch() {
+        var srch = document.getElementById("topSearch");
+        srch.style.display = (srch.style.display == "inline-block") ? "none" : "inline-block";
+        }	
+    
+        function toggleMenu() {
+        var lMenu = document.getElementById("nav");
+        lMenu.style.display = (lMenu.style.display == "table") ? "none" : "table";
+        }	
+        
+        $(".clear-input").on("click", function(){
+            $("#searchBoxTop").val("").focus();
+        });
+
+        $("#topSearch").on("submit",function(){
+            if($("#searchBoxTop").val().trim() == ""){
+                return false;
+            }
+            $("#submitTop").prop("disabled",true);
+            $("#loadingAnmTop").show().attr("float","left");
+            return true;
+        });
+
+    </script>
+
+    <script src="inc/functions/saa3a.js?v=3" type="ebae0b6df9b4975d130e9458-text/javascript"></script>
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="ebae0b6df9b4975d130e9458-|49" defer></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"974a62b4dd796a35","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"c751259900e04e929b7f2c95c98e6077"}' crossorigin="anonymous"></script>
+</body>
+</html>

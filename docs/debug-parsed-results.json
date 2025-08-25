@@ -1,0 +1,1216 @@
+{
+  "shulchan_search": {
+    "query": "שולחן",
+    "total_results": 15,
+    "exact_matches": [
+      {
+        "id": 1464,
+        "hebrew": "שולחן",
+        "arabic": "طَاوْلِة",
+        "transliteration": "טַאוְלֵה",
+        "phonetic": "taaw-le",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3144,
+        "hebrew": "שׁוּלְחָן",
+        "arabic": "سفرة",
+        "transliteration": "סֻפְרַה",
+        "phonetic": "suf-ra",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4761,
+        "hebrew": "שולחן",
+        "arabic": "ترابيزة",
+        "transliteration": "תַרַאבִּיזַה",
+        "phonetic": "ta-raa-bii-za",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3145,
+        "hebrew": "שולחן כתיבה",
+        "arabic": "مكتبة",
+        "transliteration": "",
+        "phonetic": "mak-ta-be",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 2435,
+        "hebrew": "מַפָּה",
+        "arabic": "غَطَى",
+        "transliteration": "",
+        "phonetic": "gha-t׳a",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      }
+    ],
+    "soundex_matches": [
+      {
+        "id": 1464,
+        "hebrew": "שולחן",
+        "arabic": "طَاوْلِة",
+        "transliteration": "טַאוְלֵה",
+        "phonetic": "taaw-le",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3144,
+        "hebrew": "שׁוּלְחָן",
+        "arabic": "سفرة",
+        "transliteration": "סֻפְרַה",
+        "phonetic": "suf-ra",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4761,
+        "hebrew": "שולחן",
+        "arabic": "ترابيزة",
+        "transliteration": "תַרַאבִּיזַה",
+        "phonetic": "ta-raa-bii-za",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3145,
+        "hebrew": "שולחן כתיבה",
+        "arabic": "مكتبة",
+        "transliteration": "",
+        "phonetic": "mak-ta-be",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 2435,
+        "hebrew": "מַפָּה",
+        "arabic": "غَطَى",
+        "transliteration": "",
+        "phonetic": "gha-t׳a",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      }
+    ],
+    "additional_matches": [
+      {
+        "id": 1464,
+        "hebrew": "שולחן",
+        "arabic": "طَاوْلِة",
+        "transliteration": "טַאוְלֵה",
+        "phonetic": "taaw-le",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3144,
+        "hebrew": "שׁוּלְחָן",
+        "arabic": "سفرة",
+        "transliteration": "סֻפְרַה",
+        "phonetic": "suf-ra",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4761,
+        "hebrew": "שולחן",
+        "arabic": "ترابيزة",
+        "transliteration": "תַרַאבִּיזַה",
+        "phonetic": "ta-raa-bii-za",
+        "word_type": "שם עצם",
+        "gender": "נקבה",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3145,
+        "hebrew": "שולחן כתיבה",
+        "arabic": "مكتبة",
+        "transliteration": "",
+        "phonetic": "mak-ta-be",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 2435,
+        "hebrew": "מַפָּה",
+        "arabic": "غَطَى",
+        "transliteration": "",
+        "phonetic": "gha-t׳a",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      }
+    ]
+  },
+  "halach_search": {
+    "query": "הלך",
+    "total_results": 99,
+    "exact_matches": [
+      {
+        "id": 960,
+        "hebrew": "הָלַךְ",
+        "arabic": "رَاح",
+        "transliteration": "רַאח",
+        "phonetic": "raah׳",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4061,
+        "hebrew": "הלך",
+        "arabic": "مشي",
+        "transliteration": "מִשִי",
+        "phonetic": "mi-shi",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5249,
+        "hebrew": "הלך",
+        "arabic": "ذهب",
+        "transliteration": "דַ׳הַבּ",
+        "phonetic": "dha-hab",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 617,
+        "hebrew": "הולך?",
+        "arabic": "ماشي ؟",
+        "transliteration": "",
+        "phonetic": "maa-shi",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 1063,
+        "hebrew": "מגולח",
+        "arabic": "حالق",
+        "transliteration": "",
+        "phonetic": "h׳aa-lek",
+        "has_audio": false,
+        "has_image": true,
+        "verified": true
+      },
+      {
+        "id": 1201,
+        "hebrew": "סַפָּר",
+        "arabic": "حَلَّاق",
+        "transliteration": "",
+        "phonetic": "h׳al-laaq",
+        "has_audio": false,
+        "has_image": true,
+        "verified": true
+      },
+      {
+        "id": 1747,
+        "hebrew": "הוֹלֵךְ",
+        "arabic": "رايح",
+        "transliteration": "",
+        "phonetic": "raa-yeh׳",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 2175,
+        "hebrew": "עגיל",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": true,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3434,
+        "hebrew": "חָלָק",
+        "arabic": "مالس",
+        "transliteration": "",
+        "phonetic": "maa-les",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3497,
+        "hebrew": "גרון",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3707,
+        "hebrew": "התגלח",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "ha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3708,
+        "hebrew": "הִסְתַפֵּר",
+        "arabic": "حَلَق",
+        "transliteration": "",
+        "phonetic": "ha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4113,
+        "hebrew": "מוּסָר",
+        "arabic": "أَخْلَاق",
+        "transliteration": "",
+        "phonetic": "2akh-laaq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5087,
+        "hebrew": "נוֹלַד",
+        "arabic": "خلق",
+        "transliteration": "",
+        "phonetic": "khi-leq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5675,
+        "hebrew": "יְצִירָתִי",
+        "arabic": "خلّاق",
+        "transliteration": "",
+        "phonetic": "kha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5676,
+        "hebrew": "יָצַר, בָּרָא",
+        "arabic": "خلق",
+        "transliteration": "",
+        "phonetic": "kha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6192,
+        "hebrew": "חלק",
+        "arabic": "اختلف",
+        "transliteration": "",
+        "phonetic": "2ikh-ta-laf",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6525,
+        "hebrew": "סִיפֵּר",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6526,
+        "hebrew": "חֵלֶק",
+        "arabic": "جزء",
+        "transliteration": "",
+        "phonetic": "juz2",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7648,
+        "hebrew": "בריאה, יצירה",
+        "arabic": "خَلْق",
+        "transliteration": "",
+        "phonetic": "khalq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7780,
+        "hebrew": "חילק",
+        "arabic": "قسم",
+        "transliteration": "",
+        "phonetic": "qa-sam",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8073,
+        "hebrew": "הולך",
+        "arabic": "مَاشِي",
+        "transliteration": "",
+        "phonetic": "maa-shi",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8419,
+        "hebrew": "עכשיו",
+        "arabic": "هَلَّق",
+        "transliteration": "",
+        "phonetic": "hal-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8783,
+        "hebrew": "בורא",
+        "arabic": "خالق",
+        "transliteration": "",
+        "phonetic": "khaa-leq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8852,
+        "hebrew": "חלק",
+        "arabic": "شَقَّة",
+        "transliteration": "",
+        "phonetic": "shaq-qa",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 419,
+        "hebrew": "הלך עלי",
+        "arabic": "راحت عليّ",
+        "transliteration": "",
+        "phonetic": "raa-h׳at 3a-layy",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 1948,
+        "hebrew": "הלך לאיבוד, איבד דרכו",
+        "arabic": "تاه",
+        "transliteration": "",
+        "phonetic": "taah",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3375,
+        "hebrew": "הלך הביתה",
+        "arabic": "رَوَّح",
+        "transliteration": "",
+        "phonetic": "raw-wah׳",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4804,
+        "hebrew": "טִייֵּל, הִתְהַלֵּך",
+        "arabic": "تْمَشَّى",
+        "transliteration": "",
+        "phonetic": "tmash-sha",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5593,
+        "hebrew": "מה קרה לך?!",
+        "arabic": "شو صايبك",
+        "transliteration": "",
+        "phonetic": "shuu s׳ay-bak",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7416,
+        "hebrew": "הסתדר לו, הלך לו",
+        "arabic": "زَبَط مَعُه",
+        "transliteration": "",
+        "phonetic": "za-bat׳ ma-3o",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8939,
+        "hebrew": "עקב, הלך אחרי",
+        "arabic": "تبع",
+        "transliteration": "",
+        "phonetic": "ta-ba3",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 9009,
+        "hebrew": "בְּמֶשֶׁךְ, בְּמַהֲלָךְ",
+        "arabic": "أَثْنَاء",
+        "transliteration": "",
+        "phonetic": "2ath-naa2",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      }
+    ],
+    "soundex_matches": [
+      {
+        "id": 960,
+        "hebrew": "הָלַךְ",
+        "arabic": "رَاح",
+        "transliteration": "רַאח",
+        "phonetic": "raah׳",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4061,
+        "hebrew": "הלך",
+        "arabic": "مشي",
+        "transliteration": "מִשִי",
+        "phonetic": "mi-shi",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5249,
+        "hebrew": "הלך",
+        "arabic": "ذهب",
+        "transliteration": "דַ׳הַבּ",
+        "phonetic": "dha-hab",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 617,
+        "hebrew": "הולך?",
+        "arabic": "ماشي ؟",
+        "transliteration": "",
+        "phonetic": "maa-shi",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 1063,
+        "hebrew": "מגולח",
+        "arabic": "حالق",
+        "transliteration": "",
+        "phonetic": "h׳aa-lek",
+        "has_audio": false,
+        "has_image": true,
+        "verified": true
+      },
+      {
+        "id": 1201,
+        "hebrew": "סַפָּר",
+        "arabic": "حَلَّاق",
+        "transliteration": "",
+        "phonetic": "h׳al-laaq",
+        "has_audio": false,
+        "has_image": true,
+        "verified": true
+      },
+      {
+        "id": 1747,
+        "hebrew": "הוֹלֵךְ",
+        "arabic": "رايح",
+        "transliteration": "",
+        "phonetic": "raa-yeh׳",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 2175,
+        "hebrew": "עגיל",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": true,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3434,
+        "hebrew": "חָלָק",
+        "arabic": "مالس",
+        "transliteration": "",
+        "phonetic": "maa-les",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3497,
+        "hebrew": "גרון",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3707,
+        "hebrew": "התגלח",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "ha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3708,
+        "hebrew": "הִסְתַפֵּר",
+        "arabic": "حَلَق",
+        "transliteration": "",
+        "phonetic": "ha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4113,
+        "hebrew": "מוּסָר",
+        "arabic": "أَخْلَاق",
+        "transliteration": "",
+        "phonetic": "2akh-laaq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5087,
+        "hebrew": "נוֹלַד",
+        "arabic": "خلق",
+        "transliteration": "",
+        "phonetic": "khi-leq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5675,
+        "hebrew": "יְצִירָתִי",
+        "arabic": "خلّاق",
+        "transliteration": "",
+        "phonetic": "kha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5676,
+        "hebrew": "יָצַר, בָּרָא",
+        "arabic": "خلق",
+        "transliteration": "",
+        "phonetic": "kha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6192,
+        "hebrew": "חלק",
+        "arabic": "اختلف",
+        "transliteration": "",
+        "phonetic": "2ikh-ta-laf",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6525,
+        "hebrew": "סִיפֵּר",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6526,
+        "hebrew": "חֵלֶק",
+        "arabic": "جزء",
+        "transliteration": "",
+        "phonetic": "juz2",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7648,
+        "hebrew": "בריאה, יצירה",
+        "arabic": "خَلْق",
+        "transliteration": "",
+        "phonetic": "khalq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7780,
+        "hebrew": "חילק",
+        "arabic": "قسم",
+        "transliteration": "",
+        "phonetic": "qa-sam",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8073,
+        "hebrew": "הולך",
+        "arabic": "مَاشِي",
+        "transliteration": "",
+        "phonetic": "maa-shi",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8419,
+        "hebrew": "עכשיו",
+        "arabic": "هَلَّق",
+        "transliteration": "",
+        "phonetic": "hal-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8783,
+        "hebrew": "בורא",
+        "arabic": "خالق",
+        "transliteration": "",
+        "phonetic": "khaa-leq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8852,
+        "hebrew": "חלק",
+        "arabic": "شَقَّة",
+        "transliteration": "",
+        "phonetic": "shaq-qa",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 419,
+        "hebrew": "הלך עלי",
+        "arabic": "راحت عليّ",
+        "transliteration": "",
+        "phonetic": "raa-h׳at 3a-layy",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 1948,
+        "hebrew": "הלך לאיבוד, איבד דרכו",
+        "arabic": "تاه",
+        "transliteration": "",
+        "phonetic": "taah",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3375,
+        "hebrew": "הלך הביתה",
+        "arabic": "رَوَّح",
+        "transliteration": "",
+        "phonetic": "raw-wah׳",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4804,
+        "hebrew": "טִייֵּל, הִתְהַלֵּך",
+        "arabic": "تْمَشَّى",
+        "transliteration": "",
+        "phonetic": "tmash-sha",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5593,
+        "hebrew": "מה קרה לך?!",
+        "arabic": "شو صايبك",
+        "transliteration": "",
+        "phonetic": "shuu s׳ay-bak",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7416,
+        "hebrew": "הסתדר לו, הלך לו",
+        "arabic": "زَبَط مَعُه",
+        "transliteration": "",
+        "phonetic": "za-bat׳ ma-3o",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8939,
+        "hebrew": "עקב, הלך אחרי",
+        "arabic": "تبع",
+        "transliteration": "",
+        "phonetic": "ta-ba3",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 9009,
+        "hebrew": "בְּמֶשֶׁךְ, בְּמַהֲלָךְ",
+        "arabic": "أَثْنَاء",
+        "transliteration": "",
+        "phonetic": "2ath-naa2",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      }
+    ],
+    "additional_matches": [
+      {
+        "id": 960,
+        "hebrew": "הָלַךְ",
+        "arabic": "رَاح",
+        "transliteration": "רַאח",
+        "phonetic": "raah׳",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4061,
+        "hebrew": "הלך",
+        "arabic": "مشي",
+        "transliteration": "מִשִי",
+        "phonetic": "mi-shi",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5249,
+        "hebrew": "הלך",
+        "arabic": "ذهب",
+        "transliteration": "דַ׳הַבּ",
+        "phonetic": "dha-hab",
+        "word_type": "פועל",
+        "gender": "זכר",
+        "number": "יחיד",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 617,
+        "hebrew": "הולך?",
+        "arabic": "ماشي ؟",
+        "transliteration": "",
+        "phonetic": "maa-shi",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 1063,
+        "hebrew": "מגולח",
+        "arabic": "حالق",
+        "transliteration": "",
+        "phonetic": "h׳aa-lek",
+        "has_audio": false,
+        "has_image": true,
+        "verified": true
+      },
+      {
+        "id": 1201,
+        "hebrew": "סַפָּר",
+        "arabic": "حَلَّاق",
+        "transliteration": "",
+        "phonetic": "h׳al-laaq",
+        "has_audio": false,
+        "has_image": true,
+        "verified": true
+      },
+      {
+        "id": 1747,
+        "hebrew": "הוֹלֵךְ",
+        "arabic": "رايح",
+        "transliteration": "",
+        "phonetic": "raa-yeh׳",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 2175,
+        "hebrew": "עגיל",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": true,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3434,
+        "hebrew": "חָלָק",
+        "arabic": "مالس",
+        "transliteration": "",
+        "phonetic": "maa-les",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3497,
+        "hebrew": "גרון",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3707,
+        "hebrew": "התגלח",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "ha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3708,
+        "hebrew": "הִסְתַפֵּר",
+        "arabic": "حَلَق",
+        "transliteration": "",
+        "phonetic": "ha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4113,
+        "hebrew": "מוּסָר",
+        "arabic": "أَخْلَاق",
+        "transliteration": "",
+        "phonetic": "2akh-laaq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5087,
+        "hebrew": "נוֹלַד",
+        "arabic": "خلق",
+        "transliteration": "",
+        "phonetic": "khi-leq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5675,
+        "hebrew": "יְצִירָתִי",
+        "arabic": "خلّاق",
+        "transliteration": "",
+        "phonetic": "kha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5676,
+        "hebrew": "יָצַר, בָּרָא",
+        "arabic": "خلق",
+        "transliteration": "",
+        "phonetic": "kha-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6192,
+        "hebrew": "חלק",
+        "arabic": "اختلف",
+        "transliteration": "",
+        "phonetic": "2ikh-ta-laf",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6525,
+        "hebrew": "סִיפֵּר",
+        "arabic": "حلق",
+        "transliteration": "",
+        "phonetic": "h׳a-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 6526,
+        "hebrew": "חֵלֶק",
+        "arabic": "جزء",
+        "transliteration": "",
+        "phonetic": "juz2",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7648,
+        "hebrew": "בריאה, יצירה",
+        "arabic": "خَلْق",
+        "transliteration": "",
+        "phonetic": "khalq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7780,
+        "hebrew": "חילק",
+        "arabic": "قسم",
+        "transliteration": "",
+        "phonetic": "qa-sam",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8073,
+        "hebrew": "הולך",
+        "arabic": "مَاشِي",
+        "transliteration": "",
+        "phonetic": "maa-shi",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8419,
+        "hebrew": "עכשיו",
+        "arabic": "هَلَّق",
+        "transliteration": "",
+        "phonetic": "hal-laq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8783,
+        "hebrew": "בורא",
+        "arabic": "خالق",
+        "transliteration": "",
+        "phonetic": "khaa-leq",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8852,
+        "hebrew": "חלק",
+        "arabic": "شَقَّة",
+        "transliteration": "",
+        "phonetic": "shaq-qa",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 419,
+        "hebrew": "הלך עלי",
+        "arabic": "راحت عليّ",
+        "transliteration": "",
+        "phonetic": "raa-h׳at 3a-layy",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 1948,
+        "hebrew": "הלך לאיבוד, איבד דרכו",
+        "arabic": "تاه",
+        "transliteration": "",
+        "phonetic": "taah",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 3375,
+        "hebrew": "הלך הביתה",
+        "arabic": "رَوَّح",
+        "transliteration": "",
+        "phonetic": "raw-wah׳",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 4804,
+        "hebrew": "טִייֵּל, הִתְהַלֵּך",
+        "arabic": "تْمَشَّى",
+        "transliteration": "",
+        "phonetic": "tmash-sha",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 5593,
+        "hebrew": "מה קרה לך?!",
+        "arabic": "شو صايبك",
+        "transliteration": "",
+        "phonetic": "shuu s׳ay-bak",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 7416,
+        "hebrew": "הסתדר לו, הלך לו",
+        "arabic": "زَبَط مَعُه",
+        "transliteration": "",
+        "phonetic": "za-bat׳ ma-3o",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 8939,
+        "hebrew": "עקב, הלך אחרי",
+        "arabic": "تبع",
+        "transliteration": "",
+        "phonetic": "ta-ba3",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      },
+      {
+        "id": 9009,
+        "hebrew": "בְּמֶשֶׁךְ, בְּמַהֲלָךְ",
+        "arabic": "أَثْنَاء",
+        "transliteration": "",
+        "phonetic": "2ath-naa2",
+        "has_audio": false,
+        "has_image": false,
+        "verified": true
+      }
+    ]
+  }
+}
