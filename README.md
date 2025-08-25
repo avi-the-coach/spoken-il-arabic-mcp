@@ -1,14 +1,24 @@
 # Spoken IL Arabic MCP Server
 
-An MCP (Model Context Protocol) server that provides access to Arabic Palestinian conjugation and dictionary lookup through the roadtorecovery.org.il/Spokenarabic API.
+A comprehensive MCP (Model Context Protocol) server that provides access to both Arabic Palestinian verb conjugations and general Arabic dictionary lookup. Features dual API integration for complete Arabic language support.
 
 ## Features
 
-- 🔍 **Search Arabic Roots**: Find roots by Hebrew meaning, Arabic transliteration, or root patterns
+### Verb Conjugations (roadtorecovery.org.il API)
+- 🔍 **Search Arabic Verbs**: Find verb roots by Hebrew meaning, Arabic transliteration, or patterns
 - 📚 **Full Conjugations**: Get complete conjugation tables with all verb forms  
-- 🔄 **Similar Roots**: Discover related roots by pattern, meaning, or phonetic similarity
-- 🎨 **HTML Formatting**: Built-in beautiful HTML page generation for Arabic roots with RTL support
+- 🔄 **Similar Roots**: Discover related verb roots by pattern, meaning, or phonetic similarity
+
+### General Dictionary (milon.madrasafree.com API)
+- 📖 **Arabic Dictionary**: Search general vocabulary beyond just verbs
+- 🔤 **Multi-format Results**: Arabic script, Hebrew transliteration, and phonetic pronunciation
+- 🎯 **Smart Matching**: Get both search results and detailed word information
+- 🗣️ **Audio Support**: Indicates words with pronunciation recordings available
+
+### Universal Features
+- 🎨 **HTML Formatting**: Built-in beautiful HTML page generation with RTL support
 - 🌐 **Hebrew/Arabic Support**: Proper handling of bidirectional text and UTF-8 encoding
+- 📱 **Code Word System**: Use "get search results for" vs "get full data for" to control output
 - ⚡ **Fast & Reliable**: Built with TypeScript for robust error handling
 
 ## Prerequisites
@@ -49,11 +59,18 @@ This MCP server includes built-in HTML formatting capabilities that automaticall
 
 Simply ask your AI client to "create an HTML page for [Hebrew word]" and the server will handle the complete workflow from search to formatted output.
 
-## Available Tools
+### Code Word Control System
+Use specific phrases to control the response type:
+- **"get search results for [word]"** → Returns search results list only
+- **"get full data for [word]"** → Returns complete detailed information
 
-### 1. search_arabic_roots
+## Available Tools (5 Total)
 
-Search for Arabic roots by various criteria.
+### Verb Conjugation Tools
+
+#### 1. search_arabic_verbs (formerly search_arabic_roots)
+
+Search for Arabic verb roots by various criteria.
 
 **Parameters:**
 - `search_term` (string, required): The term to search for
@@ -69,9 +86,9 @@ Search for Arabic roots by various criteria.
 }
 ```
 
-### 2. get_root_conjugation
+#### 2. get_root_conjugation
 
-Get complete conjugation data for a specific root.
+Get complete conjugation data for a specific verb root.
 
 **Parameters:**
 - `root_id` (string, required): Exact root ID from search results
@@ -82,14 +99,14 @@ Get complete conjugation data for a specific root.
 **Example:**
 ```json
 {
-  "root_id": "ללכת - רוח, פעל 1",
+  "root_id": "ללכת - רוח, פעل 1",
   "include_examples": true
 }
 ```
 
-### 3. get_similar_roots
+#### 3. get_similar_roots
 
-Find roots similar to a reference root.
+Find verb roots similar to a reference root.
 
 **Parameters:**
 - `root_id` (string, required): Reference root ID
@@ -99,23 +116,70 @@ Find roots similar to a reference root.
 **Example:**
 ```json
 {
-  "root_id": "ללכת - רוח, פעל 1",
+  "root_id": "ללכת - רוח, פعל 1",
   "similarity_type": "pattern",
   "limit": 10
 }
 ```
 
+### Dictionary Tools
+
+#### 4. search_arabic_dictionary
+
+Search for general Arabic vocabulary (not just verbs).
+
+**Parameters:**
+- `search_term` (string, required): Hebrew or Arabic word to search for
+- `limit` (number, optional): Maximum results (default: 20, max: 100)
+
+**Example:**
+```json
+{
+  "search_term": "שולחן",
+  "limit": 15
+}
+```
+
+**Returns:**
+- `exact_matches`: Direct word matches
+- `soundex_matches`: Phonetically similar words  
+- `additional_matches`: Other related results
+- Each match includes: Arabic script, Hebrew transliteration, phonetics, word type, gender
+
+#### 5. get_dictionary_word
+
+Get detailed information for a specific dictionary word by ID.
+
+**Parameters:**
+- `word_id` (number, required): Word ID from search results
+
+**Example:**
+```json
+{
+  "word_id": 1464
+}
+```
+
+**Returns:**
+- Complete word details with examples
+- Related words and usage information
+- Audio and image availability indicators
+
 ## API Details
 
-### Data Source
+### Data Sources
+
+#### Verb Conjugation API
 - **API**: `https://amir-325409.oa.r.appspot.com`
 - **Source**: roadtorecovery.org.il/Spokenarabic
 - **Coverage**: 2,930+ Hebrew roots, 4,336+ Arabic transliterations
+- **Root ID Format**: Must match exactly as returned (e.g., `"ללכת - רוח, פעל 1"`)
 
-### Root ID Format
-Root IDs must match exactly as returned by the search API:
-- Hebrew format: `"ללכת - רוח, פעל 1"`
-- Arabic format: `"ra7"`, `"roo7"`
+#### Dictionary API  
+- **API**: `https://milon.madrasafree.com`
+- **Coverage**: Comprehensive Arabic-Hebrew vocabulary
+- **Features**: Arabic script, Hebrew transliteration, phonetic pronunciation
+- **Word IDs**: Numeric identifiers for detailed lookups
 
 ## Example Interactions
 
@@ -165,17 +229,23 @@ src/
 ├── index.ts          # Entry point
 ├── server.ts         # MCP server implementation  
 ├── api/
-│   └── client.ts     # API client for roadtorecovery
+│   ├── client.ts           # API client for roadtorecovery
+│   └── dictionaryClient.ts # API client for milon dictionary
 ├── tools/
-│   ├── search.ts     # Search functionality
-│   ├── conjugate.ts  # Conjugation retrieval
-│   └── similar.ts    # Similar roots finding
+│   ├── search.ts           # Verb search functionality
+│   ├── conjugate.ts        # Conjugation retrieval
+│   ├── similar.ts          # Similar roots finding
+│   ├── dictionarySearch.ts # Dictionary search
+│   └── dictionaryWord.ts   # Dictionary word details
 ├── types/
-│   └── api.ts        # TypeScript interfaces
+│   └── api.ts        # TypeScript interfaces for both APIs
 └── utils/
-    ├── formatter.ts     # Text processing utilities
-    ├── htmlFormatter.ts # HTML page generation
-    └── validator.ts     # Input validation
+    ├── formatter.ts        # Text processing utilities
+    ├── htmlFormatter.ts    # HTML page generation
+    ├── dictionaryParser.ts # HTML parser for dictionary
+    └── validator.ts        # Input validation
+docs/
+└── examples/         # HTML examples and debug files
 ```
 
 ## Error Handling
